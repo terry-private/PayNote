@@ -19,6 +19,8 @@
 		09B541C926871384003C37AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541C826871384003C37AB /* HomeViewController.swift */; };
 		09B541CB268713E4003C37AB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09B541CA268713E4003C37AB /* Home.storyboard */; };
 		09B541CF26871FE6003C37AB /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541CE26871FE6003C37AB /* HomeProtocol.swift */; };
+		09B541DF26877652003C37AB /* MainTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541DE26877652003C37AB /* MainTabPresenter.swift */; };
+		09B541E126877904003C37AB /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541E026877904003C37AB /* MainTabRouter.swift */; };
 		58A1110166FDB06B61B474D1 /* Pods_PayNote_PayNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7B62F7B12C348FAD9AC6EF /* Pods_PayNote_PayNoteUITests.framework */; };
 		6129B7393D8B76C4D8CD3808 /* Pods_PayNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */; };
 		D9141ECC526C02FC176D9C09 /* Pods_PayNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD0FA05239B136ABC4C7BFA /* Pods_PayNoteTests.framework */; };
@@ -60,6 +62,8 @@
 		09B541C826871384003C37AB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		09B541CA268713E4003C37AB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		09B541CE26871FE6003C37AB /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		09B541DE26877652003C37AB /* MainTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabPresenter.swift; sourceTree = "<group>"; };
+		09B541E026877904003C37AB /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
 		0E780096C1CB107D56D32BD0 /* Pods-PayNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote.debug.xcconfig"; path = "Target Support Files/Pods-PayNote/Pods-PayNote.debug.xcconfig"; sourceTree = "<group>"; };
 		18F38CC7829F7779F8FE7D3D /* Pods-PayNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote.release.xcconfig"; path = "Target Support Files/Pods-PayNote/Pods-PayNote.release.xcconfig"; sourceTree = "<group>"; };
 		3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +131,7 @@
 			children = (
 				09AEDB3D267F2F70003CA186 /* AppDelegate.swift */,
 				09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */,
-				09B541BC2686F736003C37AB /* MainTabBarController.swift */,
+				09B541DD2687713D003C37AB /* MainTab */,
 				09B541CC268713EB003C37AB /* Home */,
 				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
 				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
@@ -179,6 +183,16 @@
 				09B541CA268713E4003C37AB /* Home.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		09B541DD2687713D003C37AB /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				09B541BC2686F736003C37AB /* MainTabBarController.swift */,
+				09B541DE26877652003C37AB /* MainTabPresenter.swift */,
+				09B541E026877904003C37AB /* MainTabRouter.swift */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 		4739B5CAC26E736C41EBFA67 /* Pods */ = {
@@ -482,9 +496,11 @@
 			files = (
 				09B541CF26871FE6003C37AB /* HomeProtocol.swift in Sources */,
 				09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */,
+				09B541E126877904003C37AB /* MainTabRouter.swift in Sources */,
 				09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */,
 				09B541C226870794003C37AB /* R.generated.swift in Sources */,
 				09B541BD2686F736003C37AB /* MainTabBarController.swift in Sources */,
+				09B541DF26877652003C37AB /* MainTabPresenter.swift in Sources */,
 				09B541BF2686FCD9003C37AB /* Transitioner.swift in Sources */,
 				09B541C926871384003C37AB /* HomeViewController.swift in Sources */,
 			);

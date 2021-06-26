@@ -18,9 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let mainScene = (scene as? UIWindowScene) else {
             return
         }
-        let mainTab = MainTabBarController()
+
+        // MainTabModules
+        let mainTabView = MainTabBarController()
+        let mainTabPresenter = MainTabPresenter()
+        let mainTabRouter = MainTabRouter()
+
+        // MainTab DI
+        mainTabView.presenter = mainTabPresenter
+        mainTabPresenter.tab = mainTabView
+        mainTabPresenter.router = mainTabRouter
+        mainTabRouter.tab = mainTabView
+
         window = UIWindow(windowScene: mainScene)
-        window?.rootViewController = mainTab
+        window?.rootViewController = mainTabView
         window?.makeKeyAndVisible()
     }
 

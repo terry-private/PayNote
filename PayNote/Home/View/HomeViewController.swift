@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeViewProtocol: Transitioner {
+    var presenter: HomePresenterProtocol? { get set }
+}
+
 class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     override func viewDidLoad() {

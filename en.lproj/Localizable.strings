@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  PayNote
+
+  Created by 若江照仁 on 2021/06/27.
+  
+*/
+
+// MainTabBar
+"mainTabBar_home" = "ホーム";

@@ -15,6 +15,9 @@
 		09AEDB60267F2F73003CA186 /* PayNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB5F267F2F73003CA186 /* PayNoteUITests.swift */; };
 		09B541BD2686F736003C37AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541BC2686F736003C37AB /* MainTabBarController.swift */; };
 		09B541BF2686FCD9003C37AB /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541BE2686FCD9003C37AB /* Transitioner.swift */; };
+		58A1110166FDB06B61B474D1 /* Pods_PayNote_PayNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7B62F7B12C348FAD9AC6EF /* Pods_PayNote_PayNoteUITests.framework */; };
+		6129B7393D8B76C4D8CD3808 /* Pods_PayNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */; };
+		D9141ECC526C02FC176D9C09 /* Pods_PayNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD0FA05239B136ABC4C7BFA /* Pods_PayNoteTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		09AEDB61267F2F73003CA186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B541BC2686F736003C37AB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		09B541BE2686FCD9003C37AB /* Transitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
+		0E780096C1CB107D56D32BD0 /* Pods-PayNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote.debug.xcconfig"; path = "Target Support Files/Pods-PayNote/Pods-PayNote.debug.xcconfig"; sourceTree = "<group>"; };
+		18F38CC7829F7779F8FE7D3D /* Pods-PayNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote.release.xcconfig"; path = "Target Support Files/Pods-PayNote/Pods-PayNote.release.xcconfig"; sourceTree = "<group>"; };
+		3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7B62F7B12C348FAD9AC6EF /* Pods_PayNote_PayNoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayNote_PayNoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E40E4D7B15A9F3CDE0E594 /* Pods-PayNote-PayNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote-PayNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-PayNote-PayNoteUITests/Pods-PayNote-PayNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DAD0FA05239B136ABC4C7BFA /* Pods_PayNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3DC2792BB788BB0E2E8528 /* Pods-PayNote-PayNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote-PayNoteUITests.debug.xcconfig"; path = "Target Support Files/Pods-PayNote-PayNoteUITests/Pods-PayNote-PayNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED9B80B3AAD9CE5D05558A00 /* Pods-PayNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNoteTests.release.xcconfig"; path = "Target Support Files/Pods-PayNoteTests/Pods-PayNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		F508C75A486D42972E7480F4 /* Pods-PayNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNoteTests.debug.xcconfig"; path = "Target Support Files/Pods-PayNoteTests/Pods-PayNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6129B7393D8B76C4D8CD3808 /* Pods_PayNote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9141ECC526C02FC176D9C09 /* Pods_PayNoteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A1110166FDB06B61B474D1 /* Pods_PayNote_PayNoteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				09AEDB53267F2F73003CA186 /* PayNoteTests */,
 				09AEDB5E267F2F73003CA186 /* PayNoteUITests */,
 				09AEDB3B267F2F70003CA186 /* Products */,
+				4739B5CAC26E736C41EBFA67 /* Pods */,
+				52E39D0B9274C30733E52D48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,30 @@
 			path = PayNoteUITests;
 			sourceTree = "<group>";
 		};
+		4739B5CAC26E736C41EBFA67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E780096C1CB107D56D32BD0 /* Pods-PayNote.debug.xcconfig */,
+				18F38CC7829F7779F8FE7D3D /* Pods-PayNote.release.xcconfig */,
+				DD3DC2792BB788BB0E2E8528 /* Pods-PayNote-PayNoteUITests.debug.xcconfig */,
+				44E40E4D7B15A9F3CDE0E594 /* Pods-PayNote-PayNoteUITests.release.xcconfig */,
+				F508C75A486D42972E7480F4 /* Pods-PayNoteTests.debug.xcconfig */,
+				ED9B80B3AAD9CE5D05558A00 /* Pods-PayNoteTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		52E39D0B9274C30733E52D48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */,
+				3F7B62F7B12C348FAD9AC6EF /* Pods_PayNote_PayNoteUITests.framework */,
+				DAD0FA05239B136ABC4C7BFA /* Pods_PayNoteTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09AEDB64267F2F73003CA186 /* Build configuration list for PBXNativeTarget "PayNote" */;
 			buildPhases = (
+				6FB48441A4BF6BADE6BCB337 /* [CP] Check Pods Manifest.lock */,
 				09AEDB36267F2F70003CA186 /* Sources */,
 				09AEDB37267F2F70003CA186 /* Frameworks */,
 				09AEDB38267F2F70003CA186 /* Resources */,
+				EC0BDDC859244A44605FC1A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09AEDB67267F2F73003CA186 /* Build configuration list for PBXNativeTarget "PayNoteTests" */;
 			buildPhases = (
+				A1CBD2ED6B34B27167FC60E0 /* [CP] Check Pods Manifest.lock */,
 				09AEDB4C267F2F73003CA186 /* Sources */,
 				09AEDB4D267F2F73003CA186 /* Frameworks */,
 				09AEDB4E267F2F73003CA186 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09AEDB6A267F2F73003CA186 /* Build configuration list for PBXNativeTarget "PayNoteUITests" */;
 			buildPhases = (
+				480CB4ECB463BCC1A157E2E0 /* [CP] Check Pods Manifest.lock */,
 				09AEDB57267F2F73003CA186 /* Sources */,
 				09AEDB58267F2F73003CA186 /* Frameworks */,
 				09AEDB59267F2F73003CA186 /* Resources */,
+				96C5441FE67B1E86EA8BED64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +297,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		480CB4ECB463BCC1A157E2E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayNote-PayNoteUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FB48441A4BF6BADE6BCB337 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayNote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96C5441FE67B1E86EA8BED64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayNote-PayNoteUITests/Pods-PayNote-PayNoteUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayNote-PayNoteUITests/Pods-PayNote-PayNoteUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayNote-PayNoteUITests/Pods-PayNote-PayNoteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1CBD2ED6B34B27167FC60E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayNoteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC0BDDC859244A44605FC1A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayNote/Pods-PayNote-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayNote/Pods-PayNote-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayNote/Pods-PayNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09AEDB36267F2F70003CA186 /* Sources */ = {
@@ -425,6 +574,7 @@
 		};
 		09AEDB65267F2F73003CA186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E780096C1CB107D56D32BD0 /* Pods-PayNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +594,7 @@
 		};
 		09AEDB66267F2F73003CA186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18F38CC7829F7779F8FE7D3D /* Pods-PayNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +614,7 @@
 		};
 		09AEDB68267F2F73003CA186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F508C75A486D42972E7480F4 /* Pods-PayNoteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +637,7 @@
 		};
 		09AEDB69267F2F73003CA186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED9B80B3AAD9CE5D05558A00 /* Pods-PayNoteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +660,7 @@
 		};
 		09AEDB6B267F2F73003CA186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD3DC2792BB788BB0E2E8528 /* Pods-PayNote-PayNoteUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +681,7 @@
 		};
 		09AEDB6C267F2F73003CA186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44E40E4D7B15A9F3CDE0E594 /* Pods-PayNote-PayNoteUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

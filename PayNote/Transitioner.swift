@@ -14,7 +14,7 @@ protocol Transitioner where Self: UIViewController {
     func popToViewController(_ viewController: UIViewController, animated: Bool)
     func present(viewController: UIViewController,
                  animated: Bool,
-                 completion: (() -> ())?)
+                 completion: (() -> Void)?)
     func dismiss(animated: Bool)
 }
 
@@ -35,7 +35,7 @@ extension Transitioner {
     func popToViewController(_ viewController: UIViewController, animated: Bool) {
     }
 
-    func present(viewController: UIViewController, animated: Bool, completion: (() -> ())? = nil) {
+    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
         present(viewController, animated: animated, completion: completion)
     }
 
@@ -43,4 +43,3 @@ extension Transitioner {
         dismiss(animated: animated)
     }
 }
-

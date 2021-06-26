@@ -9,7 +9,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    // MARK:- ライフサイクル系
+    // MARK: - ライフサイクル系
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTab()

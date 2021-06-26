@@ -8,6 +8,10 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    var homeViewController: UIViewController {
+        let vc = R.storyboard.home.homeViewController()
+        return vc ?? HomeViewController()
+    }
 
     // MARK: - ライフサイクル系
     override func viewDidLoad() {
@@ -16,6 +20,6 @@ class MainTabBarController: UITabBarController {
     }
 
     func setupTab() {
-        viewControllers = [UIViewController(), UIViewController(), UIViewController()]
+        viewControllers = [homeViewController, UIViewController(), UIViewController()]
     }
 }

@@ -7,6 +7,7 @@ target 'PayNote' do
 
   # Pods for PayNote
   pod 'R.swift'
+  pod 'SwiftLint'
 
   target 'PayNoteTests' do
     inherit! :search_paths

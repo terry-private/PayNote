@@ -14,6 +14,7 @@
 		09AEDB55267F2F73003CA186 /* PayNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB54267F2F73003CA186 /* PayNoteTests.swift */; };
 		09AEDB60267F2F73003CA186 /* PayNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB5F267F2F73003CA186 /* PayNoteUITests.swift */; };
 		09B541BD2686F736003C37AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541BC2686F736003C37AB /* MainTabBarController.swift */; };
+		09B541BF2686FCD9003C37AB /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541BE2686FCD9003C37AB /* Transitioner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		09AEDB5F267F2F73003CA186 /* PayNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayNoteUITests.swift; sourceTree = "<group>"; };
 		09AEDB61267F2F73003CA186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B541BC2686F736003C37AB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		09B541BE2686FCD9003C37AB /* Transitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				09AEDB3D267F2F70003CA186 /* AppDelegate.swift */,
 				09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */,
 				09B541BC2686F736003C37AB /* MainTabBarController.swift */,
+				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
 				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
 				09AEDB48267F2F73003CA186 /* LaunchScreen.storyboard */,
 				09AEDB4B267F2F73003CA186 /* Info.plist */,
@@ -257,6 +260,7 @@
 				09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */,
 				09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */,
 				09B541BD2686F736003C37AB /* MainTabBarController.swift in Sources */,
+				09B541BF2686FCD9003C37AB /* Transitioner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

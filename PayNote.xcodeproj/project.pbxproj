@@ -22,6 +22,7 @@
 		09B541E126877904003C37AB /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541E026877904003C37AB /* MainTabRouter.swift */; };
 		09B541E626878E5A003C37AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09B541E826878E5A003C37AB /* Localizable.strings */; };
 		09B541EB26878FCC003C37AB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B541EA26878FCC003C37AB /* HomePresenter.swift */; };
+		09B5420226904EF3003C37AB /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09B5420126904EF3003C37AB /* Color.xcassets */; };
 		58A1110166FDB06B61B474D1 /* Pods_PayNote_PayNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7B62F7B12C348FAD9AC6EF /* Pods_PayNote_PayNoteUITests.framework */; };
 		6129B7393D8B76C4D8CD3808 /* Pods_PayNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */; };
 		D9141ECC526C02FC176D9C09 /* Pods_PayNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD0FA05239B136ABC4C7BFA /* Pods_PayNoteTests.framework */; };
@@ -67,6 +68,7 @@
 		09B541E726878E5A003C37AB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09B541E926878E6D003C37AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09B541EA26878FCC003C37AB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		09B5420126904EF3003C37AB /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		0E780096C1CB107D56D32BD0 /* Pods-PayNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote.debug.xcconfig"; path = "Target Support Files/Pods-PayNote/Pods-PayNote.debug.xcconfig"; sourceTree = "<group>"; };
 		18F38CC7829F7779F8FE7D3D /* Pods-PayNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayNote.release.xcconfig"; path = "Target Support Files/Pods-PayNote/Pods-PayNote.release.xcconfig"; sourceTree = "<group>"; };
 		3CA88CA6668CD9556F12B0FE /* Pods_PayNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				09B541CC268713EB003C37AB /* Home */,
 				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
 				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
+				09B5420126904EF3003C37AB /* Color.xcassets */,
 				09AEDB48267F2F73003CA186 /* LaunchScreen.storyboard */,
 				09AEDB4B267F2F73003CA186 /* Info.plist */,
 			);
@@ -335,6 +338,7 @@
 			files = (
 				09B541CB268713E4003C37AB /* Home.storyboard in Resources */,
 				09B541E626878E5A003C37AB /* Localizable.strings in Resources */,
+				09B5420226904EF3003C37AB /* Color.xcassets in Resources */,
 				09AEDB4A267F2F73003CA186 /* LaunchScreen.storyboard in Resources */,
 				09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */,
 			);

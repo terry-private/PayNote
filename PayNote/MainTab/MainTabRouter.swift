@@ -10,6 +10,9 @@ import UIKit
 protocol MainTabRouterProtocol: AnyObject {
     var tab: MainTabBarProtocol? { get set }
     static func assembleHomeModules() -> UIViewController
+    static func assembleHistoryModules() -> UIViewController
+    static func assembleAccountModules() -> UIViewController
+    static func assembleSettingModules() -> UIViewController
     func setupTab()
 }
 

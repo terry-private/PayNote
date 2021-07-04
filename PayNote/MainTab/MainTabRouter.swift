@@ -42,13 +42,25 @@ final class MainTabRouter: MainTabRouterProtocol {
         return historyViewController
     }
 
+    static func assembleAccountModules() -> UIViewController {
+        // TODO: 一旦HomeViewになってます。
+        guard let historyViewController = R.storyboard.home.homeViewController() else {
+            fatalError("Can't create AccountViewController")
+        }
+        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_account(), image: UIImage(systemName: "creditcard"), tag: 0)
+        bar.accessibilityIdentifier = "account_bar_item"
+        historyViewController.tabBarItem = bar
+        return historyViewController
+    }
+
     func setupTab() {
         guard let tab = tab else {
             return
         }
         tab.setViewControllers(viewControllers: [
             Self.assembleHomeModules(),
-            Self.assembleHistoryModules()
+            Self.assembleHistoryModules(),
+            Self.assembleAccountModules()
         ])
     }
 }

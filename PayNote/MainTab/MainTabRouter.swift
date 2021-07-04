@@ -23,12 +23,23 @@ final class MainTabRouter: MainTabRouterProtocol {
     /// - Returns: HomeViewController
     static func assembleHomeModules() -> UIViewController {
         guard let homeViewController = R.storyboard.home.homeViewController() else {
-            fatalError("Unexpected nil @\(#function): \(#line)")
+            fatalError("Can't create HomeViewController")
         }
         let bar = UITabBarItem(title: R.string.localizable.mainTabBar_home(), image: UIImage(systemName: "house"), tag: 0)
-        bar.accessibilityIdentifier = "articleList_bar"
+        bar.accessibilityIdentifier = "home_bar_item"
         homeViewController.tabBarItem = bar
         return homeViewController
+    }
+
+    static func assembleHistoryModules() -> UIViewController {
+        // TODO: 一旦HomeViewになってます。
+        guard let historyViewController = R.storyboard.home.homeViewController() else {
+            fatalError("Can't create HistoryViewController")
+        }
+        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_history(), image: UIImage(systemName: "book"), tag: 0)
+        bar.accessibilityIdentifier = "history_bar_item"
+        historyViewController.tabBarItem = bar
+        return historyViewController
     }
 
     func setupTab() {
@@ -36,7 +47,8 @@ final class MainTabRouter: MainTabRouterProtocol {
             return
         }
         tab.setViewControllers(viewControllers: [
-            Self.assembleHomeModules()
+            Self.assembleHomeModules(),
+            Self.assembleHistoryModules()
         ])
     }
 }

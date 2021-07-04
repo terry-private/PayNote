@@ -19,9 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
+        window = UIWindow(windowScene: mainScene)
+        window?.makeKeyAndVisible()
+
         // MainTabModules
-        let mainTabView = MainTabBarController()
         let mainTabPresenter = MainTabPresenter()
+        let mainTabView = MainTabBarController(presenter: mainTabPresenter)
         let mainTabRouter = MainTabRouter()
 
         // MainTab DI
@@ -30,9 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainTabPresenter.router = mainTabRouter
         mainTabRouter.tab = mainTabView
 
-        window = UIWindow(windowScene: mainScene)
         window?.rootViewController = mainTabView
-        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

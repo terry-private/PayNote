@@ -15,6 +15,10 @@ protocol MainTabBarProtocol: Transitioner {
 final class MainTabBarController: UITabBarController, MainTabBarProtocol {
     var presenter: MainTabPresenterProtocol?
 
+    convenience init(presenter: MainTabPresenter) {
+        self.init()
+        self.presenter = presenter
+    }
     // MARK: - ライフサイクル系
     override func viewDidLoad() {
         super.viewDidLoad()

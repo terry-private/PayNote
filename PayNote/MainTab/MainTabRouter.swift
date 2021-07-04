@@ -44,13 +44,24 @@ final class MainTabRouter: MainTabRouterProtocol {
 
     static func assembleAccountModules() -> UIViewController {
         // TODO: 一旦HomeViewになってます。
-        guard let historyViewController = R.storyboard.home.homeViewController() else {
+        guard let accountViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create AccountViewController")
         }
         let bar = UITabBarItem(title: R.string.localizable.mainTabBar_account(), image: UIImage(systemName: "creditcard"), tag: 0)
         bar.accessibilityIdentifier = "account_bar_item"
-        historyViewController.tabBarItem = bar
-        return historyViewController
+        accountViewController.tabBarItem = bar
+        return accountViewController
+    }
+
+    static func assembleSettingModules() -> UIViewController {
+        // TODO: 一旦HomeViewになってます。
+        guard let settingViewController = R.storyboard.home.homeViewController() else {
+            fatalError("Can't create SettingViewController")
+        }
+        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_setting(), image: UIImage(systemName: "gear"), tag: 0)
+        bar.accessibilityIdentifier = "setting_bar_item"
+        settingViewController.tabBarItem = bar
+        return settingViewController
     }
 
     func setupTab() {
@@ -60,7 +71,8 @@ final class MainTabRouter: MainTabRouterProtocol {
         tab.setViewControllers(viewControllers: [
             Self.assembleHomeModules(),
             Self.assembleHistoryModules(),
-            Self.assembleAccountModules()
+            Self.assembleAccountModules(),
+            Self.assembleSettingModules()
         ])
     }
 }

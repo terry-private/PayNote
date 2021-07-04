@@ -22,7 +22,9 @@ final class MainTabRouter: MainTabRouterProtocol {
     ///     - HomeInteractor
     /// - Returns: HomeViewController
     static func assembleHomeModules() -> UIViewController {
-        let homeViewController = R.storyboard.home.homeViewController()!
+        guard let homeViewController = R.storyboard.home.homeViewController() else {
+            fatalError("Unexpected nil @\(#function): \(#line)")
+        }
         let bar = UITabBarItem(title: R.string.localizable.mainTabBar_home(), image: UIImage(systemName: "house"), tag: 0)
         bar.accessibilityIdentifier = "articleList_bar"
         homeViewController.tabBarItem = bar

@@ -32,12 +32,12 @@ final class MainTabBarController: UITabBarController, MainTabBarProtocol {
     func setViewControllers(viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setMainTabBar()
     }
-    
+
     func setMainTabBar() {
         mainTabBar?.translatesAutoresizingMaskIntoConstraints = false
         mainTabBar?.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true

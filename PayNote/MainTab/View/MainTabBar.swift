@@ -20,7 +20,7 @@ class MainTabBar: UIView {
     @IBOutlet private weak var historyButton: MainTabBarItem!
     @IBOutlet private weak var accountButton: MainTabBarItem!
     @IBOutlet private weak var settingButton: MainTabBarItem!
-    
+
     // MARK: - 変数
     lazy var buttons = [
         homeButton,
@@ -28,7 +28,7 @@ class MainTabBar: UIView {
         accountButton,
         settingButton
     ]
-    
+
     private var currentIndex: Int = 0 {
         didSet {
             if oldValue == currentIndex {
@@ -78,7 +78,7 @@ class MainTabBar: UIView {
         visibleBackView.layer.borderColor = UIColor.separator.cgColor
         homeButton.color = ColorManager.shared.theme.tint
     }
-    
+
     // カラーモード変更時に呼ばれる
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         plusButton.layer.borderColor = UIColor.separator.cgColor

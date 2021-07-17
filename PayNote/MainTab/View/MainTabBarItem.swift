@@ -14,7 +14,7 @@ class MainTabBarItem: UIButton {
             textLabel.textColor = color
         }
     }
-    
+
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +23,7 @@ class MainTabBarItem: UIButton {
         imageView.tintColor = .lightGray
         return imageView
     }()
-    
+
     private let textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -17,4 +17,3 @@ class AccountViewController: UIViewController, AccountViewProtocol {
         super.viewDidLoad()
     }
 }
-

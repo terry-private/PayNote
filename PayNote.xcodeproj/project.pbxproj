@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		091FB4F126A2967600AD4812 /* MainTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB4F026A2967600AD4812 /* MainTabBarItem.swift */; };
+		091FB50F26A3214A00AD4812 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB50E26A3214A00AD4812 /* HistoryViewController.swift */; };
+		091FB51126A3218700AD4812 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB51026A3218700AD4812 /* HistoryPresenter.swift */; };
+		091FB51426A321F800AD4812 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FB51326A321F800AD4812 /* History.storyboard */; };
+		091FB51726A3274600AD4812 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FB51626A3274600AD4812 /* Account.storyboard */; };
+		091FB51926A3275600AD4812 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB51826A3275600AD4812 /* AccountViewController.swift */; };
+		091FB51B26A3276600AD4812 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB51A26A3276600AD4812 /* AccountPresenter.swift */; };
+		091FB51F26A328F100AD4812 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB51E26A328F100AD4812 /* SettingViewController.swift */; };
+		091FB52126A328FF00AD4812 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB52026A328FF00AD4812 /* SettingPresenter.swift */; };
+		091FB52326A3297900AD4812 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FB52226A3297900AD4812 /* Setting.storyboard */; };
 		09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3D267F2F70003CA186 /* AppDelegate.swift */; };
 		09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */; };
 		09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AEDB46267F2F73003CA186 /* Assets.xcassets */; };
@@ -50,6 +59,15 @@
 
 /* Begin PBXFileReference section */
 		091FB4F026A2967600AD4812 /* MainTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarItem.swift; sourceTree = "<group>"; };
+		091FB50E26A3214A00AD4812 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		091FB51026A3218700AD4812 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		091FB51326A321F800AD4812 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		091FB51626A3274600AD4812 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		091FB51826A3275600AD4812 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		091FB51A26A3276600AD4812 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		091FB51E26A328F100AD4812 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		091FB52026A328FF00AD4812 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		091FB52226A3297900AD4812 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		09AEDB3A267F2F70003CA186 /* PayNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AEDB3D267F2F70003CA186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,10 +143,73 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		091FB50D26A3211B00AD4812 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				091FB51226A321B300AD4812 /* View */,
+				091FB51026A3218700AD4812 /* HistoryPresenter.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		091FB51226A321B300AD4812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				091FB50E26A3214A00AD4812 /* HistoryViewController.swift */,
+				091FB51326A321F800AD4812 /* History.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		091FB51526A3272600AD4812 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				091FB51C26A327C100AD4812 /* View */,
+				091FB51A26A3276600AD4812 /* AccountPresenter.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		091FB51C26A327C100AD4812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				091FB51826A3275600AD4812 /* AccountViewController.swift */,
+				091FB51626A3274600AD4812 /* Account.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		091FB51D26A328AE00AD4812 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				091FB52426A3298C00AD4812 /* View */,
+				091FB52026A328FF00AD4812 /* SettingPresenter.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		091FB52426A3298C00AD4812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				091FB51E26A328F100AD4812 /* SettingViewController.swift */,
+				091FB52226A3297900AD4812 /* Setting.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		091FB52526A32F7400AD4812 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
+				09B541E826878E5A003C37AB /* Localizable.strings */,
+				09AEDB4B267F2F73003CA186 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		09AEDB31267F2F70003CA186 = {
 			isa = PBXGroup;
 			children = (
-				09B541E826878E5A003C37AB /* Localizable.strings */,
 				09AEDB3C267F2F70003CA186 /* PayNote */,
 				09B541C526870BB6003C37AB /* Generated */,
 				09AEDB53267F2F73003CA186 /* PayNoteTests */,
@@ -156,11 +237,13 @@
 				09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */,
 				09B541DD2687713D003C37AB /* MainTab */,
 				09B541CC268713EB003C37AB /* Home */,
+				091FB50D26A3211B00AD4812 /* History */,
+				091FB51526A3272600AD4812 /* Account */,
+				091FB51D26A328AE00AD4812 /* Setting */,
 				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
-				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
 				09B5421626927B2A003C37AB /* ColorManager.swift */,
+				091FB52526A32F7400AD4812 /* Resources */,
 				09AEDB48267F2F73003CA186 /* LaunchScreen.storyboard */,
-				09AEDB4B267F2F73003CA186 /* Info.plist */,
 			);
 			path = PayNote;
 			sourceTree = "<group>";
@@ -358,6 +441,9 @@
 				09B541E626878E5A003C37AB /* Localizable.strings in Resources */,
 				09AEDB4A267F2F73003CA186 /* LaunchScreen.storyboard in Resources */,
 				09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */,
+				091FB51426A321F800AD4812 /* History.storyboard in Resources */,
+				091FB51726A3274600AD4812 /* Account.storyboard in Resources */,
+				091FB52326A3297900AD4812 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,11 +611,17 @@
 				09B541E126877904003C37AB /* MainTabRouter.swift in Sources */,
 				09B541EB26878FCC003C37AB /* HomePresenter.swift in Sources */,
 				09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */,
+				091FB50F26A3214A00AD4812 /* HistoryViewController.swift in Sources */,
+				091FB51F26A328F100AD4812 /* SettingViewController.swift in Sources */,
+				091FB51126A3218700AD4812 /* HistoryPresenter.swift in Sources */,
+				091FB52126A328FF00AD4812 /* SettingPresenter.swift in Sources */,
+				091FB51B26A3276600AD4812 /* AccountPresenter.swift in Sources */,
 				09B5421726927B2A003C37AB /* ColorManager.swift in Sources */,
 				09B541C226870794003C37AB /* R.generated.swift in Sources */,
 				09B541BD2686F736003C37AB /* MainTabBarController.swift in Sources */,
 				09B541DF26877652003C37AB /* MainTabPresenter.swift in Sources */,
 				09B541BF2686FCD9003C37AB /* Transitioner.swift in Sources */,
+				091FB51926A3275600AD4812 /* AccountViewController.swift in Sources */,
 				09B542152691F811003C37AB /* MainTabBar.swift in Sources */,
 				09B541C926871384003C37AB /* HomeViewController.swift in Sources */,
 				091FB4F126A2967600AD4812 /* MainTabBarItem.swift in Sources */,
@@ -714,7 +806,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58F4SK879Y;
-				INFOPLIST_FILE = PayNote/Info.plist;
+				INFOPLIST_FILE = PayNote/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -734,7 +826,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58F4SK879Y;
-				INFOPLIST_FILE = PayNote/Info.plist;
+				INFOPLIST_FILE = PayNote/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

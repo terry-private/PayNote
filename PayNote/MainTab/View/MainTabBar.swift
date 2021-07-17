@@ -13,6 +13,7 @@ protocol MainTabDelegate: AnyObject {
 }
 
 class MainTabBar: UIView {
+    // MARK: - IBOutlet系
     @IBOutlet private weak var plusButton: UIButton!
     @IBOutlet private weak var visibleBackView: UIView!
     @IBOutlet private weak var homeButton: MainTabBarItem!
@@ -20,12 +21,14 @@ class MainTabBar: UIView {
     @IBOutlet private weak var accountButton: MainTabBarItem!
     @IBOutlet private weak var settingButton: MainTabBarItem!
 
+    // MARK: - 変数
     lazy var buttons = [
         homeButton,
         historyButton,
         accountButton,
         settingButton
     ]
+
     private var currentIndex: Int = 0 {
         didSet {
             if oldValue == currentIndex {
@@ -39,6 +42,7 @@ class MainTabBar: UIView {
 
     weak var delegate: MainTabDelegate?
 
+    // MARK: - IBAction系
     @IBAction private func tappedPlusButton(_ sender: Any) {
         delegate?.tappedPlusButton()
     }
@@ -55,6 +59,7 @@ class MainTabBar: UIView {
         currentIndex = 3
     }
 
+    // MARK: - 関数
     func setup() {
         // setup center plusButton
         plusButton.layer.cornerRadius = plusButton.bounds.width / 2
@@ -73,6 +78,8 @@ class MainTabBar: UIView {
         visibleBackView.layer.borderColor = UIColor.separator.cgColor
         homeButton.color = ColorManager.shared.theme.tint
     }
+
+    // カラーモード変更時に呼ばれる
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         plusButton.layer.borderColor = UIColor.separator.cgColor
         visibleBackView.layer.borderColor = UIColor.separator.cgColor

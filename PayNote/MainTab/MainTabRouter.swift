@@ -34,7 +34,7 @@ final class MainTabRouter: MainTabRouterProtocol {
 
     static func assembleHistoryModules() -> UIViewController {
         // TODO: 一旦HomeViewになってます。
-        guard let historyViewController = R.storyboard.home.homeViewController() else {
+        guard let historyViewController = R.storyboard.history.historyViewController() else {
             fatalError("Can't create HistoryViewController")
         }
         historyViewController.view.backgroundColor = .systemBlue
@@ -43,7 +43,7 @@ final class MainTabRouter: MainTabRouterProtocol {
 
     static func assembleAccountModules() -> UIViewController {
         // TODO: 一旦HomeViewになってます。
-        guard let accountViewController = R.storyboard.home.homeViewController() else {
+        guard let accountViewController = R.storyboard.account.accountViewController() else {
             fatalError("Can't create AccountViewController")
         }
         accountViewController.view.backgroundColor = .systemRed
@@ -52,7 +52,7 @@ final class MainTabRouter: MainTabRouterProtocol {
 
     static func assembleSettingModules() -> UIViewController {
         // TODO: 一旦HomeViewになってます。
-        guard let settingViewController = R.storyboard.home.homeViewController() else {
+        guard let settingViewController = R.storyboard.setting.settingViewController() else {
             fatalError("Can't create SettingViewController")
         }
         settingViewController.view.backgroundColor = .systemYellow

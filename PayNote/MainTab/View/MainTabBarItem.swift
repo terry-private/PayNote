@@ -14,6 +14,7 @@ class MainTabBarItem: UIButton {
             textLabel.textColor = color
         }
     }
+
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +23,7 @@ class MainTabBarItem: UIButton {
         imageView.tintColor = .lightGray
         return imageView
     }()
+
     private let textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,16 +36,20 @@ class MainTabBarItem: UIButton {
 
     func setupView(icon: UIImage, title: String) {
         translatesAutoresizingMaskIntoConstraints = false
+        // iconImage設定
         iconImageView.image = icon.withRenderingMode(.alwaysTemplate)
-        textLabel.text = title
-        textLabel.font = .preferredFont(forTextStyle: .caption2)
         addSubview(iconImageView)
-        addSubview(textLabel)
+
         iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 6).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         iconImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 1, constant: 0).isActive = true
-        let iconBottomConstant: CGFloat = textLabel.text!.isEmpty ? -3 : -19
+        let iconBottomConstant: CGFloat = title.isEmpty ? -3 : -19
         iconImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: iconBottomConstant).isActive = true
+
+        // textLabel設定
+        textLabel.text = title
+        textLabel.font = .preferredFont(forTextStyle: .caption2)
+        addSubview(textLabel)
 
         textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

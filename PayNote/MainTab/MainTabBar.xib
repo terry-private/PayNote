@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="MainTabBar" customModule="PayNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddU-7X-Bfi">
+                    <rect key="frame" x="-1" y="15" width="416" height="59"/>
+                    <color key="backgroundColor" name="MainHeader"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                    </accessibility>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wQ8-Qy-46U">
+                    <rect key="frame" x="0.0" y="15" width="165" height="59"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-UO-8T5" customClass="MainTabBarItem" customModule="PayNote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="59"/>
+                            <connections>
+                                <action selector="tappedHomeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="xW7-gl-2PZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-QA-mIr" customClass="MainTabBarItem" customModule="PayNote" customModuleProvider="target">
+                            <rect key="frame" x="82.5" y="0.0" width="82.5" height="59"/>
+                            <connections>
+                                <action selector="tappedHistoryButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="eAO-5Q-sMp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-hP-h06">
+                    <rect key="frame" x="170" y="0.0" width="74" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="mxj-hP-h06" secondAttribute="height" multiplier="1:1" id="FYZ-5s-wyE"/>
+                    </constraints>
+                    <state key="normal">
+                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="tappedPlusButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="u36-u9-5Iz"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dVE-Ab-wtE">
+                    <rect key="frame" x="249" y="15" width="165" height="59"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yw-vA-vsv" customClass="MainTabBarItem" customModule="PayNote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="59"/>
+                            <connections>
+                                <action selector="tappedAccountButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="3lo-oP-YPU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn3-6I-gNT" customClass="MainTabBarItem" customModule="PayNote" customModuleProvider="target">
+                            <rect key="frame" x="82.5" y="0.0" width="82.5" height="59"/>
+                            <connections>
+                                <action selector="tappedSettingButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="jJ1-4i-UHM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="D5i-Sh-NZY"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" notEnabled="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="dVE-Ab-wtE" firstAttribute="leading" secondItem="mxj-hP-h06" secondAttribute="trailing" constant="5" id="0gs-ap-JjY"/>
+                <constraint firstItem="mxj-hP-h06" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5YG-N2-0wM"/>
+                <constraint firstItem="mxj-hP-h06" firstAttribute="leading" secondItem="wQ8-Qy-46U" secondAttribute="trailing" constant="5" id="7Lg-8q-ahM"/>
+                <constraint firstItem="dVE-Ab-wtE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="7XW-wD-Trr"/>
+                <constraint firstItem="ddU-7X-Bfi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="GPq-ga-jII"/>
+                <constraint firstItem="D5i-Sh-NZY" firstAttribute="bottom" secondItem="mxj-hP-h06" secondAttribute="bottom" id="Hlg-DW-t9e"/>
+                <constraint firstItem="ddU-7X-Bfi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-1" id="LUZ-kQ-guq"/>
+                <constraint firstItem="mxj-hP-h06" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lgj-Ch-e5I"/>
+                <constraint firstItem="D5i-Sh-NZY" firstAttribute="bottom" secondItem="wQ8-Qy-46U" secondAttribute="bottom" id="Lzx-NR-9g7"/>
+                <constraint firstItem="wQ8-Qy-46U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vdv-zH-4bl"/>
+                <constraint firstItem="wQ8-Qy-46U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="Voi-QC-qPf"/>
+                <constraint firstItem="D5i-Sh-NZY" firstAttribute="bottom" secondItem="dVE-Ab-wtE" secondAttribute="bottom" id="X1P-N1-OPJ"/>
+                <constraint firstAttribute="bottom" secondItem="ddU-7X-Bfi" secondAttribute="bottom" id="k4m-Wk-2xm"/>
+                <constraint firstAttribute="trailing" secondItem="dVE-Ab-wtE" secondAttribute="trailing" id="n9y-xE-GEZ"/>
+                <constraint firstAttribute="trailing" secondItem="ddU-7X-Bfi" secondAttribute="trailing" constant="-1" id="sFP-TL-cw7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accountButton" destination="0Yw-vA-vsv" id="6ob-qJ-Wds"/>
+                <outlet property="historyButton" destination="Il3-QA-mIr" id="ZhH-D1-Ehh"/>
+                <outlet property="homeButton" destination="MBw-UO-8T5" id="3Lk-lf-vnS"/>
+                <outlet property="plusButton" destination="mxj-hP-h06" id="uXQ-l4-BUv"/>
+                <outlet property="settingButton" destination="Rn3-6I-gNT" id="ITI-zM-n0G"/>
+                <outlet property="visibleBackView" destination="ddU-7X-Bfi" id="TfW-ER-Z2C"/>
+            </connections>
+            <point key="canvasLocation" x="89.855072463768124" y="-124.55357142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="MainHeader">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

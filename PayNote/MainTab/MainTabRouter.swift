@@ -74,6 +74,7 @@ final class MainTabRouter: MainTabRouterProtocol {
         tab.setViewControllers(viewControllers: [
             Self.assembleHomeModules(),
             Self.assembleHistoryModules(),
+            UIViewController(),
             Self.assembleAccountModules(),
             Self.assembleSettingModules()
         ])

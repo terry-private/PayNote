@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // MainTabModules
         let mainTabPresenter = MainTabPresenter()
-        let mainTabView = MainTabBarController(presenter: mainTabPresenter)
+        let mainTabView = MainTabBarController()
         let mainTabRouter = MainTabRouter()
 
         // MainTab DI

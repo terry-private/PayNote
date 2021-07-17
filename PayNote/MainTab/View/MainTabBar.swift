@@ -26,9 +26,9 @@ class MainTabBar: UIView {
         accountButton,
         settingButton
     ]
-    private var currentIndex: Int = 1 {
+    private var currentIndex: Int = 0 {
         didSet {
-            buttons[oldValue]!.color = .gray
+            buttons[oldValue]!.color = .lightGray
             buttons[currentIndex]?.color = ColorManager.shared.theme.tint
             delegate?.tappedTabButton(from: oldValue, to: currentIndex)
         }
@@ -68,7 +68,7 @@ class MainTabBar: UIView {
     
         visibleBackView.layer.borderWidth = 0.3
         visibleBackView.layer.borderColor = UIColor.separator.cgColor
-        currentIndex = 0
+        homeButton.color = ColorManager.shared.theme.tint
     }
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         plusButton.layer.borderColor = UIColor.separator.cgColor

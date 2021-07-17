@@ -14,6 +14,7 @@ protocol MainTabRouterProtocol: AnyObject {
     static func assembleAccountModules() -> UIViewController
     static func assembleSettingModules() -> UIViewController
     func setupTab()
+    func toAddView()
 }
 
 final class MainTabRouter: MainTabRouterProtocol {
@@ -66,6 +67,10 @@ final class MainTabRouter: MainTabRouterProtocol {
         settingViewController.tabBarItem = bar
         return settingViewController
     }
+    
+    static func assembleAddModules() -> UIViewController {
+        return UIViewController()
+    }
 
     func setupTab() {
         guard let tab = tab else {
@@ -74,9 +79,12 @@ final class MainTabRouter: MainTabRouterProtocol {
         tab.setViewControllers(viewControllers: [
             Self.assembleHomeModules(),
             Self.assembleHistoryModules(),
-            UIViewController(),
             Self.assembleAccountModules(),
             Self.assembleSettingModules()
         ])
+    }
+    
+    func toAddView() {
+        tab?.present(viewController: Self.assembleAddModules(), animated: true, completion: nil)
     }
 }

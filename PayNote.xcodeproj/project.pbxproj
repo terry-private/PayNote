@@ -114,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091FB4F226A2D01500AD4812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09B541BC2686F736003C37AB /* MainTabBarController.swift */,
+				09B542142691F811003C37AB /* MainTabBar.swift */,
+				09B5421826947CCB003C37AB /* MainTabBar.xib */,
+				091FB4F026A2967600AD4812 /* MainTabBarItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09AEDB31267F2F70003CA186 = {
 			isa = PBXGroup;
 			children = (
@@ -201,10 +212,7 @@
 		09B541DD2687713D003C37AB /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				09B541BC2686F736003C37AB /* MainTabBarController.swift */,
-				09B542142691F811003C37AB /* MainTabBar.swift */,
-				09B5421826947CCB003C37AB /* MainTabBar.xib */,
-				091FB4F026A2967600AD4812 /* MainTabBarItem.swift */,
+				091FB4F226A2D01500AD4812 /* View */,
 				09B541DE26877652003C37AB /* MainTabPresenter.swift */,
 				09B541E026877904003C37AB /* MainTabRouter.swift */,
 			);

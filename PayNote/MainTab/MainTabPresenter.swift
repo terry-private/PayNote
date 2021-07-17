@@ -11,6 +11,8 @@ protocol MainTabPresenterProtocol: AnyObject {
     var tab: MainTabBarProtocol? { get set }
     var router: MainTabRouterProtocol? { get set }
     func viewDidAppear()
+    func tappedPlusButton()
+    func tappedTabButton(from: Int, to: Int)
 }
 
 final class MainTabPresenter: MainTabPresenterProtocol {
@@ -21,5 +23,10 @@ final class MainTabPresenter: MainTabPresenterProtocol {
             return
         }
         router.setupTab()
+    }
+    func tappedPlusButton() {
+        router?.toAddView()
+    }
+    func tappedTabButton(from: Int, to: Int) {
     }
 }

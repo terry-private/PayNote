@@ -42,7 +42,7 @@ final class MainTabBarController: UITabBarController, MainTabBarProtocol {
         mainTabBar?.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         mainTabBar?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mainTabBar?.heightAnchor.constraint(equalToConstant: view.safeAreaInsets.bottom + 64).isActive = true
-        
+
         mainTabBar?.setup()
         mainTabBar?.delegate = self
     }
@@ -52,7 +52,7 @@ extension MainTabBarController: MainTabDelegate {
     func tappedPlusButton() {
         presenter?.tappedPlusButton()
     }
-    
+
     func tappedTabButton(from: Int, to: Int) {
         presenter?.tappedTabButton(from: from, to: to)
         guard let fromController = viewControllers?[from],

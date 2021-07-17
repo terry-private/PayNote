@@ -29,9 +29,6 @@ final class MainTabRouter: MainTabRouterProtocol {
         guard let homeViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create HomeViewController")
         }
-        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_home(), image: UIImage(systemName: "house"), tag: 0)
-        bar.accessibilityIdentifier = "home_bar_item"
-        homeViewController.tabBarItem = bar
         return homeViewController
     }
 
@@ -40,9 +37,7 @@ final class MainTabRouter: MainTabRouterProtocol {
         guard let historyViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create HistoryViewController")
         }
-        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_history(), image: UIImage(systemName: "book"), tag: 0)
-        bar.accessibilityIdentifier = "history_bar_item"
-        historyViewController.tabBarItem = bar
+        historyViewController.view.backgroundColor = .systemBlue
         return historyViewController
     }
 
@@ -51,9 +46,7 @@ final class MainTabRouter: MainTabRouterProtocol {
         guard let accountViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create AccountViewController")
         }
-        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_account(), image: UIImage(systemName: "creditcard"), tag: 0)
-        bar.accessibilityIdentifier = "account_bar_item"
-        accountViewController.tabBarItem = bar
+        accountViewController.view.backgroundColor = .systemRed
         return accountViewController
     }
 
@@ -62,14 +55,15 @@ final class MainTabRouter: MainTabRouterProtocol {
         guard let settingViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create SettingViewController")
         }
-        let bar = UITabBarItem(title: R.string.localizable.mainTabBar_setting(), image: UIImage(systemName: "gear"), tag: 0)
-        bar.accessibilityIdentifier = "setting_bar_item"
-        settingViewController.tabBarItem = bar
+        settingViewController.view.backgroundColor = .systemYellow
         return settingViewController
     }
-    
+
     static func assembleAddModules() -> UIViewController {
-        return UIViewController()
+        // TODO: 一旦HomeViewになってます。
+        let addView = Self.assembleHomeModules()
+        addView.view.backgroundColor = .systemGreen
+        return addView
     }
 
     func setupTab() {
@@ -83,7 +77,7 @@ final class MainTabRouter: MainTabRouterProtocol {
             Self.assembleSettingModules()
         ])
     }
-    
+
     func toAddView() {
         tab?.present(viewController: Self.assembleAddModules(), animated: true, completion: nil)
     }

@@ -13,12 +13,12 @@ protocol MainTabDelegate: AnyObject {
 }
 
 class MainTabBar: UIView {
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var visibleBackView: UIView!
-    @IBOutlet weak var homeButton: MainTabBarItem!
-    @IBOutlet weak var historyButton: MainTabBarItem!
-    @IBOutlet weak var accountButton: MainTabBarItem!
-    @IBOutlet weak var settingButton: MainTabBarItem!
+    @IBOutlet private weak var plusButton: UIButton!
+    @IBOutlet private weak var visibleBackView: UIView!
+    @IBOutlet private weak var homeButton: MainTabBarItem!
+    @IBOutlet private weak var historyButton: MainTabBarItem!
+    @IBOutlet private weak var accountButton: MainTabBarItem!
+    @IBOutlet private weak var settingButton: MainTabBarItem!
 
     lazy var buttons = [
         homeButton,
@@ -28,6 +28,9 @@ class MainTabBar: UIView {
     ]
     private var currentIndex: Int = 0 {
         didSet {
+            if oldValue == currentIndex {
+                return
+            }
             buttons[oldValue]!.color = .lightGray
             buttons[currentIndex]?.color = ColorManager.shared.theme.tint
             delegate?.tappedTabButton(from: oldValue, to: currentIndex)
@@ -39,16 +42,16 @@ class MainTabBar: UIView {
     @IBAction private func tappedPlusButton(_ sender: Any) {
         delegate?.tappedPlusButton()
     }
-    @IBAction func tappedHomeButton(_ sender: Any) {
+    @IBAction private func tappedHomeButton(_ sender: Any) {
         currentIndex = 0
     }
-    @IBAction func tappedHistoryButton(_ sender: Any) {
+    @IBAction private func tappedHistoryButton(_ sender: Any) {
         currentIndex = 1
     }
-    @IBAction func tappedAccountButton(_ sender: Any) {
+    @IBAction private func tappedAccountButton(_ sender: Any) {
         currentIndex = 2
     }
-    @IBAction func tappedSettingButton(_ sender: Any) {
+    @IBAction private func tappedSettingButton(_ sender: Any) {
         currentIndex = 3
     }
 
@@ -65,7 +68,7 @@ class MainTabBar: UIView {
         historyButton.setupView(icon: UIImage(systemName: "note.text")!, title: R.string.localizable.mainTabBar_history())
         accountButton.setupView(icon: UIImage(systemName: "creditcard")!, title: R.string.localizable.mainTabBar_account())
         settingButton.setupView(icon: UIImage(systemName: "gearshape")!, title: R.string.localizable.mainTabBar_setting())
-    
+
         visibleBackView.layer.borderWidth = 0.3
         visibleBackView.layer.borderColor = UIColor.separator.cgColor
         homeButton.color = ColorManager.shared.theme.tint

@@ -8,19 +8,13 @@
 import UIKit
 
 class MainTabBarItem: UIButton {
-//    var itemHeight: CGFloat = 0
-    var lock = false
-    var color: UIColor = UIColor.lightGray {
+    var color = UIColor.lightGray {
         didSet {
-            guard !lock else { return }
-            
             iconImageView.tintColor = color
             textLabel.textColor = color
         }
     }
-    
     private let iconImageView: UIImageView = {
-        
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -29,7 +23,6 @@ class MainTabBarItem: UIButton {
         return imageView
     }()
     private let textLabel: UILabel = {
-        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .caption2)
@@ -38,9 +31,8 @@ class MainTabBarItem: UIButton {
         label.textAlignment = .center
         return label
     }()
-    
+
     func setupView(icon: UIImage, title: String) {
-        
         translatesAutoresizingMaskIntoConstraints = false
         iconImageView.image = icon.withRenderingMode(.alwaysTemplate)
         textLabel.text = title
@@ -50,9 +42,9 @@ class MainTabBarItem: UIButton {
         iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 6).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         iconImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 1, constant: 0).isActive = true
-        let iconBottomConstant: CGFloat = textLabel.text == "" ? -3 : -19
+        let iconBottomConstant: CGFloat = textLabel.text!.isEmpty ? -3 : -19
         iconImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: iconBottomConstant).isActive = true
-        
+
         textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }

@@ -43,7 +43,7 @@ class MainTabBarItem: UIButton {
         iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 6).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         iconImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 1, constant: 0).isActive = true
-        let iconBottomConstant: CGFloat = textLabel.text!.isEmpty ? -3 : -19
+        let iconBottomConstant: CGFloat = title.isEmpty ? -3 : -19
         iconImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: iconBottomConstant).isActive = true
 
         // textLabel設定

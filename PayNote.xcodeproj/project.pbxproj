@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		091FB4F126A2967600AD4812 /* MainTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB4F026A2967600AD4812 /* MainTabBarItem.swift */; };
+		091FB50F26A3214A00AD4812 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB50E26A3214A00AD4812 /* HistoryViewController.swift */; };
+		091FB51126A3218700AD4812 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB51026A3218700AD4812 /* HistoryPresenter.swift */; };
+		091FB51426A321F800AD4812 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FB51326A321F800AD4812 /* History.storyboard */; };
 		09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3D267F2F70003CA186 /* AppDelegate.swift */; };
 		09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */; };
 		09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AEDB46267F2F73003CA186 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		091FB4F026A2967600AD4812 /* MainTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarItem.swift; sourceTree = "<group>"; };
+		091FB50E26A3214A00AD4812 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		091FB51026A3218700AD4812 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		091FB51326A321F800AD4812 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		09AEDB3A267F2F70003CA186 /* PayNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AEDB3D267F2F70003CA186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +131,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		091FB50D26A3211B00AD4812 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				091FB51226A321B300AD4812 /* View */,
+				091FB51026A3218700AD4812 /* HistoryPresenter.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		091FB51226A321B300AD4812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				091FB50E26A3214A00AD4812 /* HistoryViewController.swift */,
+				091FB51326A321F800AD4812 /* History.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09AEDB31267F2F70003CA186 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +180,7 @@
 				09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */,
 				09B541DD2687713D003C37AB /* MainTab */,
 				09B541CC268713EB003C37AB /* Home */,
+				091FB50D26A3211B00AD4812 /* History */,
 				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
 				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
 				09B5421626927B2A003C37AB /* ColorManager.swift */,
@@ -358,6 +383,7 @@
 				09B541E626878E5A003C37AB /* Localizable.strings in Resources */,
 				09AEDB4A267F2F73003CA186 /* LaunchScreen.storyboard in Resources */,
 				09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */,
+				091FB51426A321F800AD4812 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +551,8 @@
 				09B541E126877904003C37AB /* MainTabRouter.swift in Sources */,
 				09B541EB26878FCC003C37AB /* HomePresenter.swift in Sources */,
 				09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */,
+				091FB50F26A3214A00AD4812 /* HistoryViewController.swift in Sources */,
+				091FB51126A3218700AD4812 /* HistoryPresenter.swift in Sources */,
 				09B5421726927B2A003C37AB /* ColorManager.swift in Sources */,
 				09B541C226870794003C37AB /* R.generated.swift in Sources */,
 				09B541BD2686F736003C37AB /* MainTabBarController.swift in Sources */,

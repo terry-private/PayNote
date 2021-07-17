@@ -197,10 +197,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		091FB52526A32F7400AD4812 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
+				09B541E826878E5A003C37AB /* Localizable.strings */,
+				09AEDB4B267F2F73003CA186 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		09AEDB31267F2F70003CA186 = {
 			isa = PBXGroup;
 			children = (
-				09B541E826878E5A003C37AB /* Localizable.strings */,
 				09AEDB3C267F2F70003CA186 /* PayNote */,
 				09B541C526870BB6003C37AB /* Generated */,
 				09AEDB53267F2F73003CA186 /* PayNoteTests */,
@@ -232,10 +241,9 @@
 				091FB51526A3272600AD4812 /* Account */,
 				091FB51D26A328AE00AD4812 /* Setting */,
 				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
-				09AEDB46267F2F73003CA186 /* Assets.xcassets */,
 				09B5421626927B2A003C37AB /* ColorManager.swift */,
+				091FB52526A32F7400AD4812 /* Resources */,
 				09AEDB48267F2F73003CA186 /* LaunchScreen.storyboard */,
-				09AEDB4B267F2F73003CA186 /* Info.plist */,
 			);
 			path = PayNote;
 			sourceTree = "<group>";

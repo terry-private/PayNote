@@ -20,11 +20,7 @@ protocol MainTabRouterProtocol: AnyObject {
 final class MainTabRouter: MainTabRouterProtocol {
     weak var tab: MainTabBarProtocol?
 
-    /// make HomeViewController & DI
-    /// - HomePresenter
-    ///     - HomeRouter
-    ///     - HomeInteractor
-    /// - Returns: HomeViewController
+    // MARK: - static func assembles
     static func assembleHomeModules() -> UIViewController {
         guard let homeViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create HomeViewController")
@@ -33,7 +29,6 @@ final class MainTabRouter: MainTabRouterProtocol {
     }
 
     static func assembleHistoryModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
         guard let historyViewController = R.storyboard.history.historyViewController() else {
             fatalError("Can't create HistoryViewController")
         }
@@ -42,7 +37,6 @@ final class MainTabRouter: MainTabRouterProtocol {
     }
 
     static func assembleAccountModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
         guard let accountViewController = R.storyboard.account.accountViewController() else {
             fatalError("Can't create AccountViewController")
         }
@@ -51,7 +45,6 @@ final class MainTabRouter: MainTabRouterProtocol {
     }
 
     static func assembleSettingModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
         guard let settingViewController = R.storyboard.setting.settingViewController() else {
             fatalError("Can't create SettingViewController")
         }
@@ -59,13 +52,15 @@ final class MainTabRouter: MainTabRouterProtocol {
         return settingViewController
     }
 
-    static func assembleAddModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
-        let addView = Self.assembleHomeModules()
-        addView.view.backgroundColor = .systemGreen
-        return addView
+    static func assembleAddNewCashTransactionModules() -> UIViewController {
+        guard let addNewCashTransactionViewController = R.storyboard.addNewCashTransaction.addNewCashTransactionViewController() else {
+            fatalError("Can't create AddNewCashTransactionViewController")
+        }
+        addNewCashTransactionViewController.view.backgroundColor = .systemGreen
+        return addNewCashTransactionViewController
     }
 
+    // MARK: - setup
     func setupTab() {
         guard let tab = tab else {
             return
@@ -78,7 +73,8 @@ final class MainTabRouter: MainTabRouterProtocol {
         ])
     }
 
+    // MARK: - 遷移処理
     func toAddView() {
-        tab?.present(viewController: Self.assembleAddModules(), animated: true, completion: nil)
+        tab?.present(viewController: Self.assembleAddNewCashTransactionModules(), animated: true, completion: nil)
     }
 }

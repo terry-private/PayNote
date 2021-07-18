@@ -17,4 +17,3 @@ class AddNewCashTransactionViewController: UIViewController, AddNewCashTransacti
         super.viewDidLoad()
     }
 }
-

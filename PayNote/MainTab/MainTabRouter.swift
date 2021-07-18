@@ -20,7 +20,7 @@ protocol MainTabRouterProtocol: AnyObject {
 final class MainTabRouter: MainTabRouterProtocol {
     weak var tab: MainTabBarProtocol?
 
-    
+    // MARK: - static func assembles
     static func assembleHomeModules() -> UIViewController {
         guard let homeViewController = R.storyboard.home.homeViewController() else {
             fatalError("Can't create HomeViewController")
@@ -60,6 +60,7 @@ final class MainTabRouter: MainTabRouterProtocol {
         return addNewCashTransactionViewController
     }
 
+    // MARK: - setup
     func setupTab() {
         guard let tab = tab else {
             return
@@ -72,6 +73,7 @@ final class MainTabRouter: MainTabRouterProtocol {
         ])
     }
 
+    // MARK: - 遷移処理
     func toAddView() {
         tab?.present(viewController: Self.assembleAddNewCashTransactionModules(), animated: true, completion: nil)
     }

@@ -21,6 +21,7 @@ final class MainTabBarController: UITabBarController, MainTabBarProtocol {
         super.viewDidLoad()
         mainTabBar = R.nib.mainTabBar(owner: view)
         view.addSubview(mainTabBar!)
+        mainTabBar?.delegate = self
         tabBar.isHidden = true
     }
 
@@ -44,9 +45,7 @@ final class MainTabBarController: UITabBarController, MainTabBarProtocol {
         mainTabBar?.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         mainTabBar?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mainTabBar?.heightAnchor.constraint(equalToConstant: view.safeAreaInsets.bottom + 64).isActive = true
-
         mainTabBar?.setup()
-        mainTabBar?.delegate = self
     }
 }
 

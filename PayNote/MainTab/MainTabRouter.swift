@@ -33,7 +33,6 @@ final class MainTabRouter: MainTabRouterProtocol {
     }
 
     static func assembleHistoryModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
         guard let historyViewController = R.storyboard.history.historyViewController() else {
             fatalError("Can't create HistoryViewController")
         }
@@ -42,7 +41,6 @@ final class MainTabRouter: MainTabRouterProtocol {
     }
 
     static func assembleAccountModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
         guard let accountViewController = R.storyboard.account.accountViewController() else {
             fatalError("Can't create AccountViewController")
         }
@@ -51,7 +49,6 @@ final class MainTabRouter: MainTabRouterProtocol {
     }
 
     static func assembleSettingModules() -> UIViewController {
-        // TODO: 一旦HomeViewになってます。
         guard let settingViewController = R.storyboard.setting.settingViewController() else {
             fatalError("Can't create SettingViewController")
         }

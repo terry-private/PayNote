@@ -42,6 +42,16 @@ class MainTabBar: UIView {
 
     weak var delegate: MainTabDelegate?
 
+    // MARK: - ライフサイクル系
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // setup tabButtons
+        homeButton.setupView(icon: UIImage(systemName: "house")!, title: R.string.localizable.mainTabBar_home())
+        historyButton.setupView(icon: UIImage(systemName: "note.text")!, title: R.string.localizable.mainTabBar_history())
+        accountButton.setupView(icon: UIImage(systemName: "creditcard")!, title: R.string.localizable.mainTabBar_account())
+        settingButton.setupView(icon: UIImage(systemName: "gearshape")!, title: R.string.localizable.mainTabBar_setting())
+        homeButton.color = ColorManager.shared.theme.tint
+    }
     // MARK: - IBAction系
     @IBAction private func tappedPlusButton(_ sender: Any) {
         delegate?.tappedPlusButton()
@@ -68,15 +78,8 @@ class MainTabBar: UIView {
         plusButton.tintColor = ColorManager.shared.theme.tint
         plusButton.backgroundColor = ColorManager.shared.theme.background
 
-        // setup tabButtons
-        homeButton.setupView(icon: UIImage(systemName: "house")!, title: R.string.localizable.mainTabBar_home())
-        historyButton.setupView(icon: UIImage(systemName: "note.text")!, title: R.string.localizable.mainTabBar_history())
-        accountButton.setupView(icon: UIImage(systemName: "creditcard")!, title: R.string.localizable.mainTabBar_account())
-        settingButton.setupView(icon: UIImage(systemName: "gearshape")!, title: R.string.localizable.mainTabBar_setting())
-
         visibleBackView.layer.borderWidth = 0.3
         visibleBackView.layer.borderColor = UIColor.separator.cgColor
-        homeButton.color = ColorManager.shared.theme.tint
     }
 
     // カラーモード変更時に呼ばれる

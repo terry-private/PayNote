@@ -8,11 +8,6 @@
 import Foundation
 
 struct CashTransactionEntity {
-    enum InOut {
-        case income
-        case outgo
-    }
-    
     let id: UUID
     let inOut: InOut
     let amount: Int

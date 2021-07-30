@@ -20,6 +20,7 @@
 		091FB52826A3EA2E00AD4812 /* AddNewCashTransaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FB52726A3EA2E00AD4812 /* AddNewCashTransaction.storyboard */; };
 		091FB52A26A3EA4100AD4812 /* AddNewCashTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB52926A3EA4100AD4812 /* AddNewCashTransactionViewController.swift */; };
 		091FB52C26A3EA5B00AD4812 /* AddNewCashTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB52B26A3EA5B00AD4812 /* AddNewCashTransactionPresenter.swift */; };
+		091FB53126B44B8400AD4812 /* CashTransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091FB53026B44B8400AD4812 /* CashTransactionEntity.swift */; };
 		09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3D267F2F70003CA186 /* AppDelegate.swift */; };
 		09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */; };
 		09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AEDB46267F2F73003CA186 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		091FB52726A3EA2E00AD4812 /* AddNewCashTransaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewCashTransaction.storyboard; sourceTree = "<group>"; };
 		091FB52926A3EA4100AD4812 /* AddNewCashTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCashTransactionViewController.swift; sourceTree = "<group>"; };
 		091FB52B26A3EA5B00AD4812 /* AddNewCashTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCashTransactionPresenter.swift; sourceTree = "<group>"; };
+		091FB53026B44B8400AD4812 /* CashTransactionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTransactionEntity.swift; sourceTree = "<group>"; };
 		09AEDB3A267F2F70003CA186 /* PayNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AEDB3D267F2F70003CA186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				091FB51D26A328AE00AD4812 /* Setting */,
 				091FB52626A3EA0700AD4812 /* AddNewCashTransaction */,
 				09B541BE2686FCD9003C37AB /* Transitioner.swift */,
+				091FB53026B44B8400AD4812 /* CashTransactionEntity.swift */,
 				09B5421626927B2A003C37AB /* ColorManager.swift */,
 				091FB52526A32F7400AD4812 /* Resources */,
 				09AEDB48267F2F73003CA186 /* LaunchScreen.storyboard */,
@@ -633,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091FB53126B44B8400AD4812 /* CashTransactionEntity.swift in Sources */,
 				09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */,
 				09B541E126877904003C37AB /* MainTabRouter.swift in Sources */,
 				09B541EB26878FCC003C37AB /* HomePresenter.swift in Sources */,

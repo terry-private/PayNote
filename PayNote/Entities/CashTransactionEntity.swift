@@ -11,8 +11,8 @@ struct CashTransactionEntity {
     let id: UUID
     let inOut: InOut
     let amount: Int
-    let subCategoryId: String
-    let bankId: String
+    let subCategoryId: UUID
+    let bankId: UUID
     let date: Date
     let memo: String
 }

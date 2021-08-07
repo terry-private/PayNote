@@ -9,7 +9,7 @@ import Foundation
 
 struct SubCategoryEntity {
     let id: UUID
-    let mainCategoryId: String
+    let mainCategoryId: UUID
     let name: String
     let memo: String
 }

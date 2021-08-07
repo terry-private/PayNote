@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainTabBarProtocol: Transitioner {
     var presenter: MainTabPresenterProtocol? { get set }
-    func setViewControllers(viewControllers: [UIViewController])
+    var viewControllers: [UIViewController]? { get set }
 }
 
 final class MainTabBarController: UITabBarController, MainTabBarProtocol {
@@ -28,10 +28,6 @@ final class MainTabBarController: UITabBarController, MainTabBarProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter?.viewDidAppear()
-    }
-
-    func setViewControllers(viewControllers: [UIViewController]) {
-        self.viewControllers = viewControllers
     }
 
     override func viewDidLayoutSubviews() {
@@ -56,13 +52,5 @@ extension MainTabBarController: MainTabDelegate {
 
     func tappedTabButton(from: Int, to: Int) {
         presenter?.tappedTabButton(from: from, to: to)
-        guard let fromController = viewControllers?[from],
-              let toController = viewControllers?[to] else { return }
-        let fromView = fromController.view!
-        let toView = toController.view!
-        let viewSize = fromView.frame
-        fromView.superview?.addSubview(toView)
-        toView.frame = CGRect(x: 0, y: viewSize.origin.y, width: UIScreen.main.bounds.width, height: viewSize.height)
-        fromView.removeFromSuperview()
     }
 }

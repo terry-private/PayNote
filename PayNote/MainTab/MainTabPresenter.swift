@@ -28,5 +28,6 @@ final class MainTabPresenter: MainTabPresenterProtocol {
         router?.toAddView()
     }
     func tappedTabButton(from: Int, to: Int) {
+        router?.tappedTabButton(from: from, to: to)
     }
 }

@@ -15,6 +15,7 @@ protocol MainTabRouterProtocol: AnyObject {
     static func assembleSettingModules() -> UIViewController
     func setupTab()
     func toAddView()
+    func tappedTabButton(from: Int, to: Int)
 }
 
 final class MainTabRouter: MainTabRouterProtocol {
@@ -65,16 +66,29 @@ final class MainTabRouter: MainTabRouterProtocol {
         guard let tab = tab else {
             return
         }
-        tab.setViewControllers(viewControllers: [
+        tab.viewControllers = [
             Self.assembleHomeModules(),
             Self.assembleHistoryModules(),
             Self.assembleAccountModules(),
             Self.assembleSettingModules()
-        ])
+        ]
     }
 
     // MARK: - 遷移処理
     func toAddView() {
         tab?.present(viewController: Self.assembleAddNewCashTransactionModules(), animated: true, completion: nil)
+    }
+    func tappedTabButton(from: Int, to: Int) {
+        guard let tab = tab else {
+            return
+        }
+        guard let fromController = tab.viewControllers?[from],
+              let toController = tab.viewControllers?[to] else { return }
+        let fromView = fromController.view!
+        let toView = toController.view!
+        let viewSize = fromView.frame
+        fromView.superview?.addSubview(toView)
+        toView.frame = CGRect(x: 0, y: viewSize.origin.y, width: UIScreen.main.bounds.width, height: viewSize.height)
+        fromView.removeFromSuperview()
     }
 }

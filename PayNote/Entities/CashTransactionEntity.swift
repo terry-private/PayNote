@@ -11,7 +11,6 @@ struct CashTransactionEntity {
     let id: UUID
     let inOut: InOut
     let amount: Int
-    let mainCategoryId: String
     let subCategoryId: String
     let bankId: String
     let date: Date

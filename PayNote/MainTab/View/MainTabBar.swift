@@ -74,7 +74,7 @@ class MainTabBar: UIView {
     func setup() {
         // setup center plusButton
         plusButton.layer.cornerRadius = plusButton.bounds.width / 2
-        plusButton.layer.borderWidth = 1
+        plusButton.layer.borderWidth = 0.6
         plusButton.layer.borderColor = UIColor.separator.cgColor
         plusButton.tintColor = ColorManager.shared.theme.tint
         plusButton.backgroundColor = ColorManager.shared.theme.background

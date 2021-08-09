@@ -40,7 +40,8 @@ final class MainTabBarController: UITabBarController, MainTabBarProtocol {
         mainTabBar?.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mainTabBar?.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         mainTabBar?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainTabBar?.heightAnchor.constraint(equalToConstant: view.safeAreaInsets.bottom + 64).isActive = true
+        mainTabBar?.heightAnchor.constraint(equalToConstant: view.safeAreaInsets.bottom + 64 ).isActive = true
+        mainTabBar?.setPlusButtonBottomConstraint(constant: view.safeAreaInsets.bottom / 2)
         mainTabBar?.setup()
     }
 }

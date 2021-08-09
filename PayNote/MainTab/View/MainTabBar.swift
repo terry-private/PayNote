@@ -20,6 +20,7 @@ class MainTabBar: UIView {
     @IBOutlet private weak var historyButton: MainTabBarItem!
     @IBOutlet private weak var accountButton: MainTabBarItem!
     @IBOutlet private weak var settingButton: MainTabBarItem!
+    @IBOutlet private weak var plusButtonBottomConstraint: NSLayoutConstraint!
 
     // MARK: - 変数
     lazy var buttons = [
@@ -73,13 +74,17 @@ class MainTabBar: UIView {
     func setup() {
         // setup center plusButton
         plusButton.layer.cornerRadius = plusButton.bounds.width / 2
-        plusButton.layer.borderWidth = 0.5
+        plusButton.layer.borderWidth = 1
         plusButton.layer.borderColor = UIColor.separator.cgColor
         plusButton.tintColor = ColorManager.shared.theme.tint
         plusButton.backgroundColor = ColorManager.shared.theme.background
 
         visibleBackView.layer.borderWidth = 0.3
         visibleBackView.layer.borderColor = UIColor.separator.cgColor
+    }
+
+    func setPlusButtonBottomConstraint(constant: CGFloat) {
+        plusButtonBottomConstraint.constant = constant
     }
 
     // カラーモード変更時に呼ばれる

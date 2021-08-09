@@ -22,7 +22,7 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IpX-vD-Nbh">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
-                                        <color key="backgroundColor" name="MainBackGround"/>
+                                        <color key="backgroundColor" name="MainBackGround2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="QMq-dg-V9m"/>
                                         </constraints>
@@ -45,7 +45,7 @@
                                     </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vts-aH-rLq">
                                         <rect key="frame" x="0.0" y="180" width="414" height="638"/>
-                                        <color key="backgroundColor" name="MainHeader"/>
+                                        <color key="backgroundColor" name="MainBackGround2"/>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -73,8 +73,8 @@
         <namedColor name="MainBackGround">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MainHeader">
-            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.9695245156288147" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="MainBackGround2">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

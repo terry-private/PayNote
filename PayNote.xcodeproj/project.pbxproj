@@ -27,6 +27,8 @@
 		099D07A626BE5CD1005D294D /* BankEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D07A526BE5CD1005D294D /* BankEntity.swift */; };
 		099D07BB26C0F703005D294D /* MainCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 099D07BA26C0F703005D294D /* MainCategoryTableViewCell.xib */; };
 		099D07BD26C107D1005D294D /* MainCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D07BC26C107D1005D294D /* MainCategoryTableViewCell.swift */; };
+		099FB0D026DA80D900267E22 /* MonthlyHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 099FB0CF26DA80D900267E22 /* MonthlyHeaderCollectionViewCell.xib */; };
+		099FB0D226DB52D400267E22 /* MonthlyHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099FB0D126DB52D400267E22 /* MonthlyHeaderCollectionViewCell.swift */; };
 		09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3D267F2F70003CA186 /* AppDelegate.swift */; };
 		09AEDB40267F2F70003CA186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */; };
 		09AEDB47267F2F73003CA186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AEDB46267F2F73003CA186 /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		099D07A526BE5CD1005D294D /* BankEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankEntity.swift; sourceTree = "<group>"; };
 		099D07BA26C0F703005D294D /* MainCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		099D07BC26C107D1005D294D /* MainCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		099FB0CF26DA80D900267E22 /* MonthlyHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthlyHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		099FB0D126DB52D400267E22 /* MonthlyHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		09AEDB3A267F2F70003CA186 /* PayNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AEDB3D267F2F70003CA186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09AEDB3F267F2F70003CA186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +346,8 @@
 				09B541CA268713E4003C37AB /* Home.storyboard */,
 				099D07BA26C0F703005D294D /* MainCategoryTableViewCell.xib */,
 				099D07BC26C107D1005D294D /* MainCategoryTableViewCell.swift */,
+				099FB0CF26DA80D900267E22 /* MonthlyHeaderCollectionViewCell.xib */,
+				099FB0D126DB52D400267E22 /* MonthlyHeaderCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09B5421926947CCB003C37AB /* MainTabBar.xib in Resources */,
+				099FB0D026DA80D900267E22 /* MonthlyHeaderCollectionViewCell.xib in Resources */,
 				091FB52826A3EA2E00AD4812 /* AddNewCashTransaction.storyboard in Resources */,
 				09B541CB268713E4003C37AB /* Home.storyboard in Resources */,
 				09B541E626878E5A003C37AB /* Localizable.strings in Resources */,
@@ -665,6 +672,7 @@
 			files = (
 				091FB53126B44B8400AD4812 /* CashTransactionEntity.swift in Sources */,
 				09AEDB3E267F2F70003CA186 /* AppDelegate.swift in Sources */,
+				099FB0D226DB52D400267E22 /* MonthlyHeaderCollectionViewCell.swift in Sources */,
 				09B541E126877904003C37AB /* MainTabRouter.swift in Sources */,
 				091FB53726B4584F00AD4812 /* MainCategoryEntity.swift in Sources */,
 				09B541EB26878FCC003C37AB /* HomePresenter.swift in Sources */,

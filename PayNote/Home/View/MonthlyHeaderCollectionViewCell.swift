@@ -8,5 +8,9 @@
 import UIKit
 
 class MonthlyHeaderCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet private weak var yearLabel: UILabel!
+    @IBOutlet private weak var monthLabel: UILabel!
+    @IBOutlet private weak var balanceLabel: UILabel!
+    @IBOutlet private weak var incomeLabel: UILabel!
+    @IBOutlet private weak var outgoLabel: UILabel!
 }

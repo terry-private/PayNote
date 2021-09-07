@@ -59,7 +59,7 @@
                     </view>
                     <connections>
                         <outlet property="MainCategoryTableView" destination="Vts-aH-rLq" id="wqe-9V-fz7"/>
-                        <outlet property="MonthlyBalanceCollectionView" destination="IpX-vD-Nbh" id="UAx-Ad-8yA"/>
+                        <outlet property="monthlyHeaderCollectionView" destination="IpX-vD-Nbh" id="zlf-GA-SpT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

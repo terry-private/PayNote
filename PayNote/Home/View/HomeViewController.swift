@@ -12,11 +12,14 @@ protocol HomeViewProtocol: Transitioner {
 }
 
 class HomeViewController: UIViewController, HomeViewProtocol {
+    // MARK: - IBOutlet
     @IBOutlet private weak var monthlyHeaderCollectionView: UICollectionView!
     @IBOutlet private weak var mainCategoryTableView: UITableView!
 
     var presenter: HomePresenterProtocol?
     lazy var flowLayout = FlowLayout()
+    
+    // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
         mainCategoryTableView.dataSource = self
@@ -34,7 +37,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        monthlyHeaderCollectionView.scrollToItem(at: IndexPath(row: 10, section: 0), at: .centeredHorizontally, animated: true)
+        monthlyHeaderCollectionView.scrollToItem(at: IndexPath(row: 9, section: 0), at: .centeredHorizontally, animated: true)
     }
 
     private func transformScale(cell: UICollectionViewCell) {
@@ -46,6 +49,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         let newScale = reductionRatio * cellCenterDisX + maxScale
         cell.transform = CGAffineTransform(scaleX: newScale, y: newScale)
     }
+    
 }
 
 // MARK: - monthlyHeaderCollectionView

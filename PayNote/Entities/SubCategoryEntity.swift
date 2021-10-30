@@ -12,4 +12,6 @@ struct SubCategoryEntity {
     let mainCategoryId: UUID
     let name: String
     let memo: String
+    let createdAt: Date
+    let updatedAt: Date
 }

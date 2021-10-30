@@ -7,7 +7,7 @@
 */
 
 // MainTabBar
-"mainTabBar_home" = "ホーム";
-"mainTabBar_history" = "履歴";
-"mainTabBar_account" = "口座";
-"mainTabBar_setting" = "設定";
+"mainTabBar_home" = "Home";
+"mainTabBar_history" = "History";
+"mainTabBar_account" = "Account";
+"mainTabBar_setting" = "Setting";

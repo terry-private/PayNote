@@ -22,6 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: mainScene)
         window?.makeKeyAndVisible()
 
+        // Note
+        NoteMock.create()
+        Cache.refreshNote()
         // MainTabModules
         let mainTabPresenter = MainTabPresenter()
         let mainTabView = MainTabBarController()

@@ -13,4 +13,6 @@ struct MainCategoryEntity {
     let inOut: InOut
     let targetAmount: Int
     let memo: String
+    let createdAt: Date
+    let updatedAt: Date
 }

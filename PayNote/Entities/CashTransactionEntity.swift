@@ -9,10 +9,11 @@ import Foundation
 
 struct CashTransactionEntity {
     let id: UUID
-    let inOut: InOut
     let amount: Int
     let subCategoryId: UUID
     let bankId: UUID
     let date: Date
     let memo: String
+    let createdAt: Date
+    let updatedAt: Date
 }

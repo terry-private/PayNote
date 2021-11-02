@@ -15,8 +15,8 @@ struct YearMonth: Hashable {
     // MARK: - init
     init(key: Int) {
         self.key = key
-        month = key % 12
         year = key / 12
+        month = key % 12
     }
     init(year: Int, month: Int) {
         self.year = year
@@ -24,8 +24,8 @@ struct YearMonth: Hashable {
         key = year * 12 + month
     }
     init(_ date: Date) {
-        year = date.year
-        month = date.month
+        year = Calendar.getYear(from: date)
+        month = Calendar.getMonth(from: date)
         key = year * 12 + month
     }
 }

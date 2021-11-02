@@ -9,23 +9,21 @@ import Foundation
 
 class MainNote {
     let id: UUID
-    
+
     init(id: UUID) {
         self.id = id
     }
-    
+
     var subNotes = [UUID: SubNote]()
-    
+
     // MARK: - total
-    var shouldCalc: Bool = true
+    var shouldCalc = true
     var totalCache = 0
     var total: Int {
-        get {
-            if shouldCalc {
-                calc()
-            }
-            return totalCache
+        if shouldCalc {
+            calc()
         }
+        return totalCache
     }
     private func calc() {
         totalCache = 0
@@ -34,7 +32,7 @@ class MainNote {
         }
         shouldCalc = false
     }
-    
+
     // MARK: - Read From Entity
     var name: String { Cache.mainCategories[id]!.name }
     var inOut: InOut { Cache.mainCategories[id]!.inOut }

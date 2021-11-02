@@ -13,8 +13,8 @@ protocol HomeViewProtocol: Transitioner {
 
 class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
-    private let monthList: [YearMonth] = Cache.monthlyNotes.keys.sorted {$0.key < $1.key
-    }
+    
+    private let monthList: [YearMonth] = Cache.monthlyNotes.keys.sorted { $0.key < $1.key }
     private var currentMonthIndex: Int = 0
     private var targetViewControllerLists: [UIViewController] = []
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
@@ -41,10 +41,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     private func setupPageViewController() {
 
         // UIPageViewControllerで表示させるViewControllerの一覧を配列へ格納する
-        _ = monthList.enumerated().map{ (index, month) in
-            let vc = R.storyboard.home.monthHomeViewController()!
+        _ = monthList.enumerated().map { index, yearMonth in
+            let vc = R.storyboard.home.monthlyContentViewController()!
             vc.view.tag = index
             vc.setMonthlyNote(monthlyNote: Cache.monthlyNotes.values.first!)
+            vc.setMonthlyNote(monthlyNote: Cache.monthlyNotes[yearMonth]!)
             targetViewControllerLists.append(vc)
         }
 
@@ -58,11 +59,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         // UIPageViewControllerDelegate & UIPageViewControllerDataSourceの宣言
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
-        
+
         // 最初に表示する画面として配列の先頭のViewControllerを設定する
         pageViewController!.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
     }
-    
+
     private func updateMonthScrollTabPosition(isIncrement: Bool) {
         for childVC in children {
             if let targetVC = childVC as? MonthlyTabViewController {
@@ -94,7 +95,9 @@ extension HomeViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
 
         // スワイプアニメーションが完了していない時には処理をさせなくする
-        if !completed { return }
+        if !completed {
+            return
+        }
 
         // ここから先はUIPageViewControllerのスワイプアニメーション完了時に発動する
         if let targetViewControllers = pageViewController.viewControllers {

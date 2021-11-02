@@ -18,10 +18,10 @@ class MonthlyNote {
 
     var balance: Int { income - outgo }
 
-    private var shouldCalc: Bool = true
+    private var shouldCalc = true
 
     // income
-    private var incomeCache: Int = 0
+    private var incomeCache = 0
     var income: Int {
         if shouldCalc {
             calc()

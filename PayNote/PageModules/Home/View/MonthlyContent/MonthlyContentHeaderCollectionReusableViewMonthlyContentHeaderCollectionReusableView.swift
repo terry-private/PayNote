@@ -7,14 +7,22 @@
 
 import UIKit
 
-class MonthlyContentHeaderCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var incomeAmountLabel: UILabel!
-    @IBOutlet weak var outgoAmountLabel: UILabel!
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+final class MonthlyContentHeaderCollectionReusableView: UICollectionReusableView {
+    @IBOutlet private weak var balanceLabel: UILabel!
+    @IBOutlet private weak var incomeAmountLabel: UILabel!
+    @IBOutlet private weak var outgoAmountLabel: UILabel!
+
+    var monthlyNote: MonthlyNote? {
+        didSet {
+            balanceLabel.text = monthlyNote?.balance.description
+            incomeAmountLabel.text = monthlyNote?.income.description
+            outgoAmountLabel.text = monthlyNote?.outgo.description
+        }
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }

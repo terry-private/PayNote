@@ -9,23 +9,21 @@ import Foundation
 
 class SubNote {
     let id: UUID
-    
+
     init(id: UUID) {
         self.id = id
     }
-    
+
     var cashTransactions = Set<UUID>()
-    
+
     // MARK: - total
-    var shouldCalc: Bool = true
+    var shouldCalc = true
     var totalCache = 0
     var total: Int {
-        get {
-            if shouldCalc {
-                calc()
-            }
-            return totalCache
+        if shouldCalc {
+            calc()
         }
+        return totalCache
     }
     private func calc() {
         totalCache = 0
@@ -34,7 +32,7 @@ class SubNote {
         }
         shouldCalc = false
     }
-    
+
     // MARK: - Read From Entity
     var mainCategoryId: UUID { Cache.subCategories[id]!.mainCategoryId }
     var name: String { Cache.subCategories[id]!.name }

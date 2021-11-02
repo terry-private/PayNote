@@ -8,20 +8,21 @@
 import UIKit
 
 class MonthlyTabCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak private var yearMonthLabel: UILabel!
+    static let cellSize = CGSize(width: Const.MonthlyTag.cellWidth, height: Const.MonthlyTag.cellHeight)
+    @IBOutlet private weak var yearMonthLabel: UILabel!
     // MARK: - Class Function
 
     // カテゴリー表示用の下線の幅を算出する
     class func calculateCategoryUnderBarWidthBy(title: String) -> CGFloat {
 
         // テキストの属性を設定する
-        var categoryTitleAttributes = [NSAttributedString.Key : Any]()
+        var categoryTitleAttributes = [NSAttributedString.Key: Any]()
         categoryTitleAttributes[NSAttributedString.Key.font] = UIFont.preferredFont(forTextStyle: .headline)
 
         // 引数で渡された文字列とフォントから配置するラベルの幅を取得する
         let categoryTitleLabelSize = CGSize(
             width: .greatestFiniteMagnitude,
-            height: 17.0
+            height: Const.MonthlyTag.fontHeight
         )
         let categoryTitleLabelRect = title.boundingRect(
             with: categoryTitleLabelSize,
@@ -30,5 +31,10 @@ class MonthlyTabCollectionViewCell: UICollectionViewCell {
             context: nil)
 
         return ceil(categoryTitleLabelRect.width)
+    }
+
+    func setYearMonth(yearMonth: YearMonth, isSelected: Bool = false) {
+        yearMonthLabel.text = yearMonth.description
+        yearMonthLabel.textColor = isSelected ? ColorManager.shared.theme.text : ColorManager.shared.theme.text2
     }
 }

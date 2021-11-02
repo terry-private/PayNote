@@ -20,11 +20,13 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var remainingAmountLabel: UILabel!
     var mainNote: MainNote? {
         didSet {
-            guard let mainNote = mainNote else { return }
+            guard let mainNote = mainNote else {
+                return
+            }
             nameLabel.text = mainNote.name
             totalAmountLabel.text = mainNote.total.description
             targetAmountLabel.text = mainNote.targetAmount.description
-            remainingAmountLabel.text = (mainNote.total - mainNote.targetAmount).description
+            remainingAmountLabel.text = (mainNote.total - mainNote.targetAmount).withComma
         }
     }
 

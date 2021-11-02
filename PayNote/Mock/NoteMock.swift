@@ -7,152 +7,122 @@
 
 import Foundation
 
-class NoteMock {
-    
-    static let bankId1 = UUID()
-    static let bankId2 = UUID()
-    static let bankId3 = UUID()
-    
-    static let mainCategoryId1 = UUID()
-    static let mainCategoryId2 = UUID()
-    static let mainCategoryId3 = UUID()
-    
-    static let subCategoryId11 = UUID()
-    static let subCategoryId12 = UUID()
-    
-    static let cashTransactionId111 = UUID()
-    static let cashTransactionId112 = UUID()
-    static let cashTransactionId121 = UUID()
-    static let cashTransactionId122 = UUID()
-    
-    static let thisMonth = Date()
-    static let lastMonth = Date()
-    
-    class func create() {
+enum NoteMock {
+    static func create() {
         createBanks()
-        createMainCategories()
-        createSubCategories()
-        createCashTransactions()
+        createCategories()
     }
-    static var randomCTMemo: String {
-        return ["食材","消耗品", "酒", "ベビー用品", "子供服", "下着類", "おやつ", "まとめ買い系", "備品"].randomElement() ?? ""
+    struct Main {
+        let name: String
+        let subCategories: [UUID: String]
+        let banks: [(UUID, String)]
+        let target: Int
+        let memo: [String]
     }
-    
-    
+    private static let bank1 = (UUID(), "三井住友【生活費用】")
+    private static let bank2 = (UUID(), "家族の財布【生活費用】")
+    private static let bank3 = (UUID(), "ゆうちょ【貯金用】")
+    private static let banks = [bank1, bank2, bank3]
+
+    private static let sub11 = (UUID(), "家賃", 68000)
+    private static let sub12 = (UUID(), "光熱費", 20000)
+    private static let sub1s = [sub11, sub12]
+
+    private static let sub21 = (UUID(), "夫給料", 180000)
+    private static let sub22 = (UUID(), "嫁給料", 100000)
+    private static let sub2s = [sub21, sub22]
+
     private static func createBanks() {
-        Cache.banks[bankId1] = BankEntity(
-            id: bankId1,
-            name: "三井住友【生活費用】",
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.banks[bankId2] = BankEntity(
-            id: bankId2,
-            name: "家族の財布【生活費用】",
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.banks[bankId3] = BankEntity(
-            id: bankId3,
-            name: "ゆうちょ【貯金用】",
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
+        for bank in banks {
+            Cache.banks[bank.0] = BankEntity(
+                id: bank.0,
+                name: bank.1,
+                memo: "",
+                createdAt: Date(),
+                updatedAt: Date()
+            )
+        }
     }
-    
-    private static func createMainCategories() {
-        Cache.mainCategories[mainCategoryId1] = MainCategoryEntity(
-            id: mainCategoryId1,
+    private static let mainCategories: [UUID: Main] = [
+        UUID(): Main(
             name: "生活費",
-            inOut: .outgo,
-            targetAmount: 50000,
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.mainCategories[mainCategoryId2] = MainCategoryEntity(
-            id: mainCategoryId2,
+            subCategories: [UUID(): "スーパー", UUID(): "薬局"],
+            banks: [bank1, bank2],
+            target: 50000,
+            memo: ["食材", "消耗品", "酒", "ベビー用品", "子供服", "下着類", "おやつ", "まとめ買い系", "備品"]
+        ),
+        UUID(): Main(
+            name: "娯楽費",
+            subCategories: [UUID(): "外食", UUID(): "娯楽施設"],
+            banks: [bank1, bank2],
+            target: 30000,
+            memo: ["旅行", "梅田", "今津"]
+        ),
+        UUID(): Main(
             name: "固定費",
-            inOut: .outgo,
-            targetAmount: 100000,
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.mainCategories[mainCategoryId3] = MainCategoryEntity(
-            id: mainCategoryId3,
+            subCategories: [sub11.0: sub11.1, sub12.0: sub12.1],
+            banks: [bank1],
+            target: 88000,
+            memo: []
+        ),
+        UUID(): Main(
             name: "収入",
-            inOut: .income,
-            targetAmount: 250000,
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
+            subCategories: [sub21.0: sub21.1, sub22.0: sub22.1],
+            banks: [bank3],
+            target: 280000,
+            memo: []
         )
-    }
-    
-    private static func createSubCategories() {
-        Cache.subCategories[subCategoryId11] = SubCategoryEntity(
-            id: subCategoryId11,
-            mainCategoryId: mainCategoryId1,
-            name: "スーパー",
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.subCategories[subCategoryId12] = SubCategoryEntity(
-            id: subCategoryId12,
-            mainCategoryId: mainCategoryId1,
-            name: "ネット",
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-    }
-    
-    private static func createCashTransactions() {
-        Cache.cashTransactions[cashTransactionId111] = CashTransactionEntity(
-            id: cashTransactionId111,
-            amount: 4800,
-            subCategoryId: subCategoryId11,
-            bankId: bankId2,
-            date: Date(),
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.cashTransactions[cashTransactionId112] = CashTransactionEntity(
-            id: cashTransactionId112,
-            amount: 1850,
-            subCategoryId: subCategoryId11,
-            bankId: bankId1,
-            date: Date(),
-            memo: "",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.cashTransactions[cashTransactionId121] = CashTransactionEntity(
-            id: cashTransactionId121,
-            amount: 8800,
-            subCategoryId: subCategoryId12,
-            bankId: bankId1,
-            date: Date(),
-            memo: "amazonで本棚",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
-        Cache.cashTransactions[cashTransactionId122] = CashTransactionEntity(
-            id: cashTransactionId122,
-            amount: 5200,
-            subCategoryId: subCategoryId12,
-            bankId: bankId1,
-            date: Date(),
-            memo: "楽天でスキンケア",
-            createdAt: Date(),
-            updatedAt: Date()
-        )
+    ]
+
+    private static func createCategories() {
+        for mId in mainCategories.keys {
+            guard let main = mainCategories[mId] else { continue }
+            Cache.mainCategories[mId] = MainCategoryEntity(
+                id: mId,
+                name: main.name,
+                inOut: main.name == "収入" ? .income : .outgo,
+                targetAmount: main.target,
+                memo: "",
+                createdAt: Date(),
+                updatedAt: Date()
+            )
+            for sId in main.subCategories.keys {
+                Cache.subCategories[sId] = SubCategoryEntity(
+                    id: sId,
+                    mainCategoryId: mId,
+                    name: main.subCategories[sId]!,
+                    memo: "", createdAt: Date(), updatedAt: Date()
+                )
+            }
+            switch main.name {
+            case "固定費", "収入":
+                for i in 0...11 {
+                    for sub in main.name == "固定費" ? sub1s : sub2s {
+                        let cId = UUID()
+                        Cache.cashTransactions[cId] = CashTransactionEntity(
+                            id: cId,
+                            amount: sub.2,
+                            subCategoryId: sub.0,
+                            bankId: main.name == "固定費" ? bank1.0 : bank3.0,
+                            date: Date().added(month: -i),
+                            memo: "", createdAt: Date(), updatedAt: Date()
+                        )
+                    }
+                }
+
+            default:
+                for _ in 0...(main.name == "生活費" ? 500 : 80) {
+                    let cId = UUID()
+                    Cache.cashTransactions[cId] = CashTransactionEntity(
+                        id: cId,
+                        amount: Int.random(in: 100...Int.random(in: 200...Int.random(in: 300...(main.name == "生活費" ? 6000 : 10000)))),
+                        subCategoryId: main.subCategories.keys.randomElement()!,
+                        bankId: main.banks.randomElement()!.0,
+                        date: Date().added(day: -(Int.random(in: 0...300))),
+                        memo: main.memo.randomElement()!, createdAt: Date(), updatedAt: Date()
+                    )
+                }
+            }
+        }
     }
 }
-

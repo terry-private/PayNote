@@ -9,50 +9,61 @@ import UIKit
 
 class MonthlyContentViewController: UIViewController, Transitioner {
     // IBOutlet
-    @IBOutlet weak private var mainCategoryCollectionViewController: UICollectionView!
+    @IBOutlet private weak var mainCategoryCollectionView: UICollectionView!
     private var monthlyNote: MonthlyNote! {
         didSet {
-            mainCategoryCollectionViewController.reloadData()
+            mainCategoryCollectionView.reloadData()
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCategoryCollectionViewController.register(MonthlyContentHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyHeaderCollectionReusableView.identifier)
+        setupMainCategoryCollectionView()
     }
     func setMonthlyNote(monthlyNote: MonthlyNote) {
         self.monthlyNote = monthlyNote
+    }
+
+    private func setupMainCategoryCollectionView() {
+        mainCategoryCollectionView.delegate = self
+        mainCategoryCollectionView.dataSource = self
+//        mainCategoryCollectionView.register(MainCategoryCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.mainCategoryCollectionViewCell.identifier)
+//        mainCategoryCollectionView.register(MonthlyContentHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyHeaderCollectionReusableView.identifier)
+        mainCategoryCollectionView.register(UINib(resource: R.nib.monthlyContentHeaderCollectionReusableView), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyContentHeaderCollectionReusableView.identifier)
+//        guard let fl = mainCategoryCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
+//            return
+//            
+//        }
+//        fl.headerReferenceSize = CGSize(width: view.bounds.width, height: 30)
     }
 }
 
 extension MonthlyContentViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyHeaderCollectionReusableView.identifier, for: indexPath) as? MonthlyContentHeaderCollectionReusableView else {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyContentHeaderCollectionReusableView, for: indexPath) else {
             fatalError("ヘッダーがありません")
           }
-        
+        header.monthlyNote = monthlyNote
         return header
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        monthlyNote.mainNotes.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        switch indexPath.row {
-//        case 0:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.mainCategoryHeaderCollectionViewCell, for: indexPath)!
-//            return cell
-//        default:
-//            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.mainCategoryCollectionViewCell, for: indexPath)!
-//            return cell
-//        }
-        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.mainCategoryCollectionViewCell, for: indexPath)!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.mainCategoryCollectionViewCell, for: indexPath)!
+        cell.mainNote = Array(monthlyNote.mainNotes.values)[indexPath.row]
         return cell
     }
 }
 
 extension MonthlyContentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: 300, height: 300)
+        CGSize(width: Const.MonthlyContent.headerWidth, height: Const.MonthlyContent.headerHeight)
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: view.bounds.width - Const.MonthlyContent.cellSidePads, height: Const.MonthlyContent.cellHeight)
+    }
+
 }

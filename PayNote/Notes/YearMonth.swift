@@ -35,3 +35,9 @@ extension YearMonth: CustomStringConvertible {
         "\(year)年\(month)月"
     }
 }
+
+extension YearMonth: Comparable {
+    static func < (lhs: YearMonth, rhs: YearMonth) -> Bool {
+        lhs.key < lhs.key
+    }
+}

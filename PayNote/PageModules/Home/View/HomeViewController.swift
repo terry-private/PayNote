@@ -13,7 +13,7 @@ protocol HomeViewProtocol: Transitioner {
 
 class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
-    
+
     private let monthList: [YearMonth] = PayNote.monthlyNotes.keys.sorted { $0.key < $1.key }
     private var currentMonthIndex: Int = 0
     private var targetViewControllerLists: [UIViewController] = []

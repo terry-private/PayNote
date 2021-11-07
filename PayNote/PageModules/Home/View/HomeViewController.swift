@@ -67,7 +67,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     private func updateMonthScrollTabPosition(isIncrement: Bool) {
         for childVC in children {
             if let targetVC = childVC as? MonthlyTabViewController {
-                targetVC.delegate?.moveToDateScrollContents(selectedCollectionViewIndex: currentMonthIndex + (isIncrement ? 1 : 0), targetDirection: .reverse, withAnimated: true)
+                targetVC.moveToCategoryScrollTab(isIncrement: isIncrement)
             }
         }
     }

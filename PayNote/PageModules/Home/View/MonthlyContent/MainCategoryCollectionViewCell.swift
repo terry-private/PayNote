@@ -24,9 +24,9 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
                 return
             }
             nameLabel.text = mainNote.name
-            totalAmountLabel.text = mainNote.total.description
-            targetAmountLabel.text = mainNote.targetAmount.description
-            remainingAmountLabel.text = (mainNote.total - mainNote.targetAmount).withComma
+            totalAmountLabel.text = mainNote.total.withComma
+            targetAmountLabel.text = mainNote.targetAmount.withComma
+            remainingAmountLabel.text = (mainNote.targetAmount - mainNote.total).withComma
         }
     }
 

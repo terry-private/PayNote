@@ -14,9 +14,9 @@ final class MonthlyContentHeaderCollectionReusableView: UICollectionReusableView
 
     var monthlyNote: MonthlyNote? {
         didSet {
-            balanceLabel.text = monthlyNote?.balance.description
-            incomeAmountLabel.text = monthlyNote?.income.description
-            outgoAmountLabel.text = monthlyNote?.outgo.description
+            balanceLabel.text = monthlyNote?.balance.withComma
+            incomeAmountLabel.text = monthlyNote?.income.withComma
+            outgoAmountLabel.text = monthlyNote?.outgo.withComma
         }
     }
 //    override init(frame: CGRect) {

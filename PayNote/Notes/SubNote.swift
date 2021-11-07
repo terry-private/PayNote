@@ -28,15 +28,15 @@ class SubNote {
     private func calc() {
         totalCache = 0
         for uuid in cashTransactions {
-            totalCache += Cache.cashTransactions[uuid]!.amount
+            totalCache += PayNote.cashTransactions[uuid]!.amount
         }
         shouldCalc = false
     }
 
     // MARK: - Read From Entity
-    var mainCategoryId: UUID { Cache.subCategories[id]!.mainCategoryId }
-    var name: String { Cache.subCategories[id]!.name }
-    var memo: String { Cache.subCategories[id]!.memo }
-    var createdAt: Date { Cache.subCategories[id]!.createdAt }
-    var updatedAt: Date { Cache.subCategories[id]!.updatedAt }
+    var mainCategoryId: UUID { PayNote.subCategories[id]!.mainCategoryId }
+    var name: String { PayNote.subCategories[id]!.name }
+    var memo: String { PayNote.subCategories[id]!.memo }
+    var createdAt: Date { PayNote.subCategories[id]!.createdAt }
+    var updatedAt: Date { PayNote.subCategories[id]!.updatedAt }
 }

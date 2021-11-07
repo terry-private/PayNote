@@ -16,7 +16,7 @@ class MonthlyTabViewController: UIViewController, Transitioner {
     // CategoryScrollTabDelegateプロトコル
     weak var delegate: MonthlyTabDelegate?
 
-    private var yearMonthList: [YearMonth] = Cache.monthlyNotes.keys.sorted { $0.key < $1.key }
+    private var yearMonthList: [YearMonth] = PayNote.monthlyNotes.keys.sorted { $0.key < $1.key }
     // ボタン押下時の軽微な振動を追加する
     private let buttonFeedbackGenerator: UIImpactFeedbackGenerator = {
         let generator = UIImpactFeedbackGenerator(style: .light)
@@ -46,7 +46,7 @@ class MonthlyTabViewController: UIViewController, Transitioner {
     // MARK: - IBOutlet
     @IBOutlet private weak var monthlyTabCollectionView: UICollectionView!
     @IBOutlet private weak var selectedMonthUnderlineWidth: NSLayoutConstraint!
-    
+
     // MARK: - Computed Properties
 
     // MEMO:

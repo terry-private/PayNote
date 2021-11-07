@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Note
         NoteMock.create()
-        Cache.refreshNote()
+        PayNote.refreshNote()
         // MainTabModules
         let mainTabPresenter = MainTabPresenter()
         let mainTabView = MainTabBarController()

@@ -34,10 +34,10 @@ class MainNote {
     }
 
     // MARK: - Read From Entity
-    var name: String { Cache.mainCategories[id]!.name }
-    var inOut: InOut { Cache.mainCategories[id]!.inOut }
-    var targetAmount: Int { Cache.mainCategories[id]!.targetAmount }
-    var memo: String { Cache.mainCategories[id]!.memo }
-    var createdAt: Date { Cache.mainCategories[id]!.createdAt }
-    var updatedAt: Date { Cache.mainCategories[id]!.updatedAt }
+    var name: String { PayNote.mainCategories[id]!.name }
+    var inOut: InOut { PayNote.mainCategories[id]!.inOut }
+    var targetAmount: Int { PayNote.mainCategories[id]!.targetAmount }
+    var memo: String { PayNote.mainCategories[id]!.memo }
+    var createdAt: Date { PayNote.mainCategories[id]!.createdAt }
+    var updatedAt: Date { PayNote.mainCategories[id]!.updatedAt }
 }

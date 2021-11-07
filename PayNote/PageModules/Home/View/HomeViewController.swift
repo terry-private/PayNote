@@ -14,7 +14,7 @@ protocol HomeViewProtocol: Transitioner {
 class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
-    private let monthList: [YearMonth] = Cache.monthlyNotes.keys.sorted { $0.key < $1.key }
+    private let monthList: [YearMonth] = PayNote.monthlyNotes.keys.sorted { $0.key < $1.key }
     private var currentMonthIndex: Int = 0
     private var targetViewControllerLists: [UIViewController] = []
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
@@ -44,8 +44,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         _ = monthList.enumerated().map { index, yearMonth in
             let vc = R.storyboard.home.monthlyContentViewController()!
             vc.view.tag = index
-            vc.setMonthlyNote(monthlyNote: Cache.monthlyNotes.values.first!)
-            vc.setMonthlyNote(monthlyNote: Cache.monthlyNotes[yearMonth]!)
+            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes.values.first!)
+            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes[yearMonth]!)
             targetViewControllerLists.append(vc)
         }
 

@@ -34,7 +34,7 @@ enum NoteMock {
 
     private static func createBanks() {
         for bank in banks {
-            Cache.banks[bank.0] = BankEntity(
+            PayNote.banks[bank.0] = BankEntity(
                 id: bank.0,
                 name: bank.1,
                 memo: "",
@@ -77,7 +77,7 @@ enum NoteMock {
     private static func createCategories() {
         for mId in mainCategories.keys {
             guard let main = mainCategories[mId] else { continue }
-            Cache.mainCategories[mId] = MainCategoryEntity(
+            PayNote.mainCategories[mId] = MainCategoryEntity(
                 id: mId,
                 name: main.name,
                 inOut: main.name == "収入" ? .income : .outgo,
@@ -87,7 +87,7 @@ enum NoteMock {
                 updatedAt: Date()
             )
             for sId in main.subCategories.keys {
-                Cache.subCategories[sId] = SubCategoryEntity(
+                PayNote.subCategories[sId] = SubCategoryEntity(
                     id: sId,
                     mainCategoryId: mId,
                     name: main.subCategories[sId]!,
@@ -99,7 +99,7 @@ enum NoteMock {
                 for i in 0...11 {
                     for sub in main.name == "固定費" ? sub1s : sub2s {
                         let cId = UUID()
-                        Cache.cashTransactions[cId] = CashTransactionEntity(
+                        PayNote.cashTransactions[cId] = CashTransactionEntity(
                             id: cId,
                             amount: sub.2,
                             subCategoryId: sub.0,
@@ -113,7 +113,7 @@ enum NoteMock {
             default:
                 for _ in 0...(main.name == "生活費" ? 500 : 80) {
                     let cId = UUID()
-                    Cache.cashTransactions[cId] = CashTransactionEntity(
+                    PayNote.cashTransactions[cId] = CashTransactionEntity(
                         id: cId,
                         amount: Int.random(in: 100...Int.random(in: 200...Int.random(in: 300...(main.name == "生活費" ? 6000 : 10000)))),
                         subCategoryId: main.subCategories.keys.randomElement()!,

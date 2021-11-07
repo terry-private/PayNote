@@ -1,5 +1,5 @@
 //
-//  Cache.swift
+//  PayNote.swift
 //  PayNote
 //
 //  Created by 若江照仁 on 2021/10/17.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Cache {
+enum PayNote {
     static var mainCategories = [UUID: MainCategoryEntity]()
     static var subCategories = [UUID: SubCategoryEntity]()
     static var cashTransactions = [UUID: CashTransactionEntity]()

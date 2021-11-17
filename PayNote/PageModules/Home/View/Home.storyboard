@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-7v-DOf">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-7v-DOf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MVj-Zh-Xtv">
@@ -101,7 +101,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="401" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVX-lx-3gb" customClass="cardView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVX-lx-3gb">
                                                     <rect key="frame" x="0.0" y="0.0" width="401" height="128"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2Cd-RI-Jv1">
@@ -348,6 +348,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-0c-Egh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="48"/>
+                                <color key="backgroundColor" name="MainBackGround"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="AFd-Km-E8s"/>
                                 </constraints>
@@ -357,6 +358,7 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM5-Cr-Exe">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <color key="backgroundColor" name="MainBackGround"/>
                                 <connections>
                                     <segue destination="lam-WG-LLO" kind="embed" id="dvg-bC-UxW"/>
                                 </connections>

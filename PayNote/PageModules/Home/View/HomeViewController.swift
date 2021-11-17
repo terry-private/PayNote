@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageViewController()
+        currentMonthIndex = monthList.count - 1
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,13 +49,13 @@ class HomeViewController: UIViewController, HomeViewProtocol {
             targetViewControllerLists.append(vc)
         }
         // UIPageViewControllerで表示させるViewControllerの一覧を配列へ格納する
-        _ = monthList.enumerated().map { index, yearMonth in
-            let vc = R.storyboard.home.monthlyContentViewController()!
-            vc.view.tag = index
-            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes.values.first!)
-            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes[yearMonth]!)
-            targetViewControllerLists.append(vc)
-        }
+//        _ = monthList.enumerated().map { index, yearMonth in
+//            let vc = R.storyboard.home.monthlyContentViewController()!
+//            vc.view.tag = index
+//            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes.values.first!)
+//            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes[yearMonth]!)
+//            targetViewControllerLists.append(vc)
+//        }
 
         // ContainerViewにEmbedしたUIPageViewControllerを取得する
         for childVC in children {
@@ -67,14 +68,14 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
 
-        // 最初に表示する画面として配列の先頭のViewControllerを設定する
-        pageViewController!.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
+        // 最初に表示する画面として配列の最後のViewControllerを設定する
+        pageViewController!.setViewControllers([targetViewControllerLists.last!], direction: .forward, animated: false, completion: nil)
     }
 
-    private func updateMonthScrollTabPosition(isIncrement: Bool) {
+    private func updateMonthScrollTabPosition(to index: Int) {
         for childVC in children {
             if let targetVC = childVC as? MonthlyTabViewController {
-                targetVC.moveToCategoryScrollTab(isIncrement: isIncrement)
+                targetVC.moveToCategoryScrollTab(to: index)
             }
         }
     }
@@ -85,7 +86,7 @@ extension HomeViewController: MonthlyTabDelegate {
     func moveToDateScrollContents(selectedCollectionViewIndex: Int, targetDirection: UIPageViewController.NavigationDirection, withAnimated: Bool) {
         // UIPageViewControllerに設定した画面の表示対象インデックス値を設定する
         // MEMO: タブ表示のUICollectionViewCellのインデックス値をカテゴリーの個数で割った剰余
-        currentMonthIndex = selectedCollectionViewIndex % monthList.count
+        currentMonthIndex = selectedCollectionViewIndex
 
         // 表示対象インデックス値に該当する画面を表示する
         // MEMO: メインスレッドで実行するようにしてクラッシュを防止する対策を施している
@@ -105,29 +106,15 @@ extension HomeViewController: UIPageViewControllerDelegate {
         if !completed {
             return
         }
-
+    
         // ここから先はUIPageViewControllerのスワイプアニメーション完了時に発動する
         if let targetViewControllers = pageViewController.viewControllers {
             if let targetViewController = targetViewControllers.last {
-                // Case1: UIPageViewControllerで表示する画面のインデックス値が左スワイプで 0 → 最大インデックス値
-                if targetViewController.view.tag - currentMonthIndex == -monthList.count + 1 {
-                    updateMonthScrollTabPosition(isIncrement: true)
-
-                // Case2: UIPageViewControllerで表示する画面のインデックス値が右スワイプで 最大インデックス値 → 0
-                } else if targetViewController.view.tag - currentMonthIndex == monthList.count - 1 {
-                    updateMonthScrollTabPosition(isIncrement: false)
-
-                // Case3: UIPageViewControllerで表示する画面のインデックス値が +1
-                } else if targetViewController.view.tag - currentMonthIndex > 0 {
-                    updateMonthScrollTabPosition(isIncrement: true)
-
-                // Case4: UIPageViewControllerで表示する画面のインデックス値が -1
-                } else if targetViewController.view.tag - currentMonthIndex < 0 {
-                    updateMonthScrollTabPosition(isIncrement: false)
-                }
+                let nextIndex = targetViewController.view.tag
+                updateMonthScrollTabPosition(to: nextIndex)
 
                 // 受け取ったインデックス値を元にコンテンツ表示を更新する
-                currentMonthIndex = targetViewController.view.tag
+                currentMonthIndex = nextIndex
             }
         }
     }
@@ -140,14 +127,14 @@ extension HomeViewController: UIPageViewControllerDataSource {
             return nil
         }
 
-        return targetViewControllerLists[(targetViewControllerLists.count + index - 1) % targetViewControllerLists.count]
+        return index > 0 ? targetViewControllerLists[index - 1] : nil
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let index = targetViewControllerLists.firstIndex(of: viewController) else {
             return nil
         }
 
-        return targetViewControllerLists[(index + 1) % targetViewControllerLists.count]
+        return index < monthList.count - 1 ? targetViewControllerLists[index + 1] : nil
     }
 
 }

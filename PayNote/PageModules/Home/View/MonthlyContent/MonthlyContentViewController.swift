@@ -34,6 +34,10 @@ class MonthlyContentViewController: UIViewController, Transitioner {
 //            
 //        }
 //        fl.headerReferenceSize = CGSize(width: view.bounds.width, height: 30)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
+        mainCategoryCollectionView.collectionViewLayout = layout
     }
 }
 

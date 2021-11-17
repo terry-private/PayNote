@@ -40,6 +40,13 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 
     private func setupPageViewController() {
 
+        for yearMonthKey in PayNote.firstYearMonth.key ... YearMonth(Date()).key {
+            let yearMonth = YearMonth(key: yearMonthKey)
+            let vc = R.storyboard.home.monthlyContentViewController()!
+            vc.view.tag = yearMonthKey - PayNote.firstYearMonth.key
+            vc.setMonthlyNote(monthlyNote: PayNote.monthlyNotes[yearMonth])
+            targetViewControllerLists.append(vc)
+        }
         // UIPageViewControllerで表示させるViewControllerの一覧を配列へ格納する
         _ = monthList.enumerated().map { index, yearMonth in
             let vc = R.storyboard.home.monthlyContentViewController()!

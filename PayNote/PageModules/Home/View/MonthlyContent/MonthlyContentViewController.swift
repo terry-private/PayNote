@@ -10,7 +10,7 @@ import UIKit
 class MonthlyContentViewController: UIViewController, Transitioner {
     // IBOutlet
     @IBOutlet private weak var mainCategoryCollectionView: UICollectionView!
-    private var monthlyNote: MonthlyNote! {
+    private var monthlyNote: MonthlyNote? {
         didSet {
             mainCategoryCollectionView.reloadData()
         }
@@ -19,7 +19,7 @@ class MonthlyContentViewController: UIViewController, Transitioner {
         super.viewDidLoad()
         setupMainCategoryCollectionView()
     }
-    func setMonthlyNote(monthlyNote: MonthlyNote) {
+    func setMonthlyNote(monthlyNote: MonthlyNote?) {
         self.monthlyNote = monthlyNote
     }
 
@@ -48,11 +48,14 @@ extension MonthlyContentViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        monthlyNote.mainNotes.count
+        monthlyNote?.mainNotes.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.mainCategoryCollectionViewCell, for: indexPath)!
-        cell.mainNote = Array(monthlyNote.mainNotes.values)[indexPath.row]
+        guard let note = monthlyNote else {
+            return cell
+        }
+        cell.mainNote = Array(note.mainNotes.values)[indexPath.row]
         return cell
     }
 }

@@ -15,12 +15,13 @@ enum PayNote {
 
     static var monthlyNotes = [YearMonth: MonthlyNote]()
 
+    /// init of monthlyNotes by entities
     static func refreshNote() {
         for cashTransaction in cashTransactions.values {
             let subId = cashTransaction.subCategoryId
             let mainId = subCategories[subId]!.mainCategoryId
             let yearMonth = YearMonth(cashTransaction.date)
-
+            firstYearMonth = min(firstYearMonth, yearMonth)
             let monthlyNote = monthlyNotes[yearMonth, default: MonthlyNote(yearMonth: yearMonth)]
             let mainNote = monthlyNote.mainNotes[mainId, default: MainNote(id: mainId)]
             let subNote = mainNote.subNotes[subId, default: SubNote(id: subId)]
@@ -31,4 +32,6 @@ enum PayNote {
         }
         print(monthlyNotes)
     }
+
+    static var firstYearMonth = YearMonth(Date())
 }

@@ -290,10 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				09B541DD2687713D003C37AB /* MainTab */,
-				09B541CC268713EB003C37AB /* Home */,
-				091FB50D26A3211B00AD4812 /* History */,
-				091FB51526A3272600AD4812 /* Account */,
-				091FB51D26A328AE00AD4812 /* Setting */,
 				091FB52626A3EA0700AD4812 /* AddNewCashTransaction */,
 			);
 			path = PageModules;
@@ -344,6 +340,17 @@
 				09596990272EC8580094017E /* Const.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		099AC6A3274A2CDB00B49E26 /* TabPageModules */ = {
+			isa = PBXGroup;
+			children = (
+				09B541CC268713EB003C37AB /* Home */,
+				091FB50D26A3211B00AD4812 /* History */,
+				091FB51526A3272600AD4812 /* Account */,
+				091FB51D26A328AE00AD4812 /* Setting */,
+			);
+			path = TabPageModules;
 			sourceTree = "<group>";
 		};
 		099D07A426BE5C68005D294D /* Entities */ = {
@@ -453,6 +460,7 @@
 				091FB4F226A2D01500AD4812 /* View */,
 				09B541DE26877652003C37AB /* MainTabPresenter.swift */,
 				09B541E026877904003C37AB /* MainTabRouter.swift */,
+				099AC6A3274A2CDB00B49E26 /* TabPageModules */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";

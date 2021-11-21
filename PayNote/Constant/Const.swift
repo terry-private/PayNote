@@ -9,7 +9,7 @@ import UIKit
 
 enum Const {
     enum MonthlyTag {
-        static let cellWidth: CGFloat = 150
+        static let cellWidth: CGFloat = 140
         static let cellHeight: CGFloat = 48
         static let fontHeight: CGFloat = 17
     }

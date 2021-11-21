@@ -10,8 +10,16 @@ import UIKit
 class MonthlyContentViewController: UIViewController, Transitioner {
     // IBOutlet
     @IBOutlet private weak var mainCategoryCollectionView: UICollectionView!
-    private var monthlyNote: MonthlyNote? {
+    @IBOutlet private weak var noDataView: UIView!
+    private(set) var monthlyNote: MonthlyNote? {
         didSet {
+            if monthlyNote?.mainNotes.count ?? 0 == 0 {
+                noDataView.isHidden = false
+                mainCategoryCollectionView.isHidden = true
+                return
+            }
+            noDataView.isHidden = true
+            mainCategoryCollectionView.isHidden = false
             mainCategoryCollectionView.reloadData()
         }
     }
@@ -19,21 +27,16 @@ class MonthlyContentViewController: UIViewController, Transitioner {
         super.viewDidLoad()
         setupMainCategoryCollectionView()
     }
-    func setMonthlyNote(monthlyNote: MonthlyNote?) {
+    func setMonthlyNote(monthlyNote: MonthlyNote) {
         self.monthlyNote = monthlyNote
     }
 
     private func setupMainCategoryCollectionView() {
         mainCategoryCollectionView.delegate = self
         mainCategoryCollectionView.dataSource = self
-//        mainCategoryCollectionView.register(MainCategoryCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.mainCategoryCollectionViewCell.identifier)
-//        mainCategoryCollectionView.register(MonthlyContentHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyHeaderCollectionReusableView.identifier)
-        mainCategoryCollectionView.register(UINib(resource: R.nib.monthlyContentHeaderCollectionReusableView), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: R.reuseIdentifier.monthlyContentHeaderCollectionReusableView.identifier)
-//        guard let fl = mainCategoryCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
-//            return
-//            
-//        }
-//        fl.headerReferenceSize = CGSize(width: view.bounds.width, height: 30)
+        mainCategoryCollectionView.register(
+            UINib(resource: R.nib.monthlyContentHeaderCollectionReusableView), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: R.reuseIdentifier.monthlyContentHeaderCollectionReusableView.identifier)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)

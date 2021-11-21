@@ -84,6 +84,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YI6-2M-NJr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-pZ-VK5">
+                                        <rect key="frame" x="107" y="228" width="200" height="242"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle.3.group" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKS-K6-ZIH">
+                                                <rect key="frame" x="0.0" y="1" width="200" height="197.5"/>
+                                                <color key="tintColor" name="MainText2"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uKS-K6-ZIH" secondAttribute="height" multiplier="1:1" id="ANL-5N-BAC"/>
+                                                    <constraint firstAttribute="width" constant="200" id="ScK-jU-48A"/>
+                                                </constraints>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vp6-mz-asl">
+                                                <rect key="frame" x="46" y="205" width="108.5" height="37"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="textColor" name="MainText2"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="MainBackGround"/>
+                                <constraints>
+                                    <constraint firstItem="dTg-pZ-VK5" firstAttribute="centerY" secondItem="YI6-2M-NJr" secondAttribute="centerY" constant="-60" id="2cX-rc-Xut"/>
+                                    <constraint firstItem="dTg-pZ-VK5" firstAttribute="centerX" secondItem="YI6-2M-NJr" secondAttribute="centerX" id="kpP-U2-otw"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-7v-DOf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -326,12 +357,17 @@
                         <constraints>
                             <constraint firstItem="qg5-7v-DOf" firstAttribute="top" secondItem="JyN-wf-kv5" secondAttribute="top" id="F6R-fu-Hkl"/>
                             <constraint firstItem="JyN-wf-kv5" firstAttribute="bottom" secondItem="qg5-7v-DOf" secondAttribute="bottom" id="IGd-vD-7fG"/>
+                            <constraint firstItem="JyN-wf-kv5" firstAttribute="bottom" secondItem="YI6-2M-NJr" secondAttribute="bottom" id="aqT-uj-Fhq"/>
                             <constraint firstItem="JyN-wf-kv5" firstAttribute="trailing" secondItem="qg5-7v-DOf" secondAttribute="trailing" id="czw-Bt-X2w"/>
+                            <constraint firstItem="YI6-2M-NJr" firstAttribute="leading" secondItem="JyN-wf-kv5" secondAttribute="leading" id="i6E-L2-I8a"/>
                             <constraint firstItem="qg5-7v-DOf" firstAttribute="leading" secondItem="JyN-wf-kv5" secondAttribute="leading" id="kB2-98-vZK"/>
+                            <constraint firstItem="YI6-2M-NJr" firstAttribute="top" secondItem="JyN-wf-kv5" secondAttribute="top" id="wd0-lc-0Sz"/>
+                            <constraint firstItem="JyN-wf-kv5" firstAttribute="trailing" secondItem="YI6-2M-NJr" secondAttribute="trailing" id="zQT-M2-nlh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mainCategoryCollectionView" destination="qg5-7v-DOf" id="w8E-9b-L7G"/>
+                        <outlet property="noDataView" destination="YI6-2M-NJr" id="QLN-eV-e0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXq-vv-Toq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -365,6 +401,7 @@
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gxg-3A-0tG"/>
+                        <color key="backgroundColor" name="MainBackGround"/>
                         <constraints>
                             <constraint firstItem="dM5-Cr-Exe" firstAttribute="top" secondItem="hlE-0c-Egh" secondAttribute="bottom" id="7Q7-k1-ERM"/>
                             <constraint firstItem="Gxg-3A-0tG" firstAttribute="trailing" secondItem="dM5-Cr-Exe" secondAttribute="trailing" id="Cwq-3v-Vvm"/>
@@ -383,6 +420,7 @@
     </scenes>
     <resources>
         <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="rectangle.3.group" catalog="system" width="128" height="81"/>
         <namedColor name="MainBackGround">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

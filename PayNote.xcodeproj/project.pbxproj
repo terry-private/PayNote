@@ -32,7 +32,7 @@
 		093F6406271AB39400204EEB /* MonthlyContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F6405271AB39400204EEB /* MonthlyContentViewController.swift */; };
 		093F6408271B06B800204EEB /* MainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F6407271B06B800204EEB /* MainCategoryCollectionViewCell.swift */; };
 		095867AA271C169500D7517A /* MonthlyContentHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095867A9271C169500D7517A /* MonthlyContentHeaderCollectionReusableView.xib */; };
-		095867AC271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableViewMonthlyContentHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095867AB271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableViewMonthlyContentHeaderCollectionReusableView.swift */; };
+		095867AC271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095867AB271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableView.swift */; };
 		095867B3271C5E7200D7517A /* PayNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095867B2271C5E7200D7517A /* PayNote.swift */; };
 		095867B5271C5F6300D7517A /* NoteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095867B4271C5F6300D7517A /* NoteMock.swift */; };
 		09596986272D81CC0094017E /* MonthlyTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09596985272D81CC0094017E /* MonthlyTabCollectionViewCell.xib */; };
@@ -108,7 +108,7 @@
 		093F6405271AB39400204EEB /* MonthlyContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyContentViewController.swift; sourceTree = "<group>"; };
 		093F6407271B06B800204EEB /* MainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		095867A9271C169500D7517A /* MonthlyContentHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthlyContentHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
-		095867AB271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableViewMonthlyContentHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyContentHeaderCollectionReusableViewMonthlyContentHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		095867AB271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyContentHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		095867B2271C5E7200D7517A /* PayNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayNote.swift; sourceTree = "<group>"; };
 		095867B4271C5F6300D7517A /* NoteMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMock.swift; sourceTree = "<group>"; };
 		09596985272D81CC0094017E /* MonthlyTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthlyTabCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 				093F6405271AB39400204EEB /* MonthlyContentViewController.swift */,
 				093F6407271B06B800204EEB /* MainCategoryCollectionViewCell.swift */,
 				095867A9271C169500D7517A /* MonthlyContentHeaderCollectionReusableView.xib */,
-				095867AB271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableViewMonthlyContentHeaderCollectionReusableView.swift */,
+				095867AB271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableView.swift */,
 			);
 			path = MonthlyContent;
 			sourceTree = "<group>";
@@ -800,7 +800,7 @@
 				09B541BF2686FCD9003C37AB /* Transitioner.swift in Sources */,
 				091FB51926A3275600AD4812 /* AccountViewController.swift in Sources */,
 				09B542152691F811003C37AB /* MainTabBar.swift in Sources */,
-				095867AC271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableViewMonthlyContentHeaderCollectionReusableView.swift in Sources */,
+				095867AC271C18BC00D7517A /* MonthlyContentHeaderCollectionReusableView.swift in Sources */,
 				09B541C926871384003C37AB /* HomeViewController.swift in Sources */,
 				0939C770271F183100F5BE36 /* Date+Calendar.swift in Sources */,
 				0939C76C271F0B8400F5BE36 /* SubNote.swift in Sources */,

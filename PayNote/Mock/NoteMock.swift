@@ -96,7 +96,7 @@ enum NoteMock {
             }
             switch main.name {
             case "固定費", "収入":
-                for i in 0...11 {
+                for i in 0...35 {
                     for sub in main.name == "固定費" ? sub1s : sub2s {
                         let cId = UUID()
                         PayNote.cashTransactions[cId] = CashTransactionEntity(
@@ -107,18 +107,20 @@ enum NoteMock {
                             date: Date().added(month: -i),
                             memo: "", createdAt: Date(), updatedAt: Date()
                         )
+                        if i % 12 == 11 {
+                        }
                     }
                 }
 
             default:
-                for _ in 0...(main.name == "生活費" ? 500 : 80) {
+                for _ in 0...(main.name == "生活費" ? 1500 : 240) {
                     let cId = UUID()
                     PayNote.cashTransactions[cId] = CashTransactionEntity(
                         id: cId,
                         amount: Int.random(in: 100...Int.random(in: 200...Int.random(in: 300...(main.name == "生活費" ? 6000 : 10000)))),
                         subCategoryId: main.subCategories.keys.randomElement()!,
                         bankId: main.banks.randomElement()!.0,
-                        date: Date().added(day: -(Int.random(in: 0...300))),
+                        date: Date().added(day: -(Int.random(in: 0...1094))),
                         memo: main.memo.randomElement()!, createdAt: Date(), updatedAt: Date()
                     )
                 }

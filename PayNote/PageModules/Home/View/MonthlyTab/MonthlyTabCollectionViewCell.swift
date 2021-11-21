@@ -9,9 +9,11 @@ import UIKit
 
 class MonthlyTabCollectionViewCell: UICollectionViewCell {
     static let cellSize = CGSize(width: Const.MonthlyTag.cellWidth, height: Const.MonthlyTag.cellHeight)
-    @IBOutlet private weak var yearMonthLabel: UILabel!
-    // MARK: - Class Function
 
+    // MARK: - IBOutlet
+    @IBOutlet private weak var yearLabel: UILabel!
+    @IBOutlet private weak var monthLabel: UILabel!
+    // MARK: - Class Function
     // カテゴリー表示用の下線の幅を算出する
     class func calculateCategoryUnderBarWidthBy(title: String) -> CGFloat {
 
@@ -34,7 +36,12 @@ class MonthlyTabCollectionViewCell: UICollectionViewCell {
     }
 
     func setYearMonth(yearMonth: YearMonth, isSelected: Bool = false) {
-        yearMonthLabel.text = yearMonth.description
-        yearMonthLabel.textColor = isSelected ? ColorManager.shared.theme.text : ColorManager.shared.theme.text2
+        yearLabel.text = yearMonth.year.description
+        monthLabel.text = yearMonth.month.description
+        
+        // 選択状態かどうかで色を変更
+        let textColor = isSelected ? ColorManager.shared.theme.text : ColorManager.shared.theme.text2
+        yearLabel.textColor = textColor
+        monthLabel.textColor = textColor
     }
 }

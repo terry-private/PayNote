@@ -30,8 +30,7 @@ enum PayNote {
             monthlyNote.mainNotes[mainNote.id] = mainNote
             monthlyNotes[monthlyNote.yearMonth] = monthlyNote
         }
-        print(monthlyNotes)
     }
 
-    static var firstYearMonth = YearMonth(Date())
+    private(set) static var firstYearMonth = YearMonth(Date())
 }

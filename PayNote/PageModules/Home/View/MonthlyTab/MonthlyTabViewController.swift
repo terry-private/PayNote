@@ -17,7 +17,7 @@ class MonthlyTabViewController: UIViewController, Transitioner {
     weak var delegate: MonthlyTabDelegate?
     lazy var flowLayout = CategoryScrollTabViewFlowLayout()
 
-    private var yearMonthList: [YearMonth] = PayNote.monthlyNotes.keys.sorted { $0.key < $1.key }
+    private var yearMonthList: [YearMonth] = PayNote.monthlyNotes.keys.sorted { $0.value < $1.value }
     // ボタン押下時の軽微な振動を追加する
     private let buttonFeedbackGenerator: UIImpactFeedbackGenerator = {
         let generator = UIImpactFeedbackGenerator(style: .light)
@@ -26,13 +26,10 @@ class MonthlyTabViewController: UIViewController, Transitioner {
     }()
 
     // MEMO: UICollectionViewの一番最初のセル表示位置に関する設定
-    // 参考: https://www.101010.fun/entry/swift-once-exec
     private lazy var setInitialMonthlyTabPosition: (() -> Void)? = {
 
         // 押下した場所のインデックス値を持っておくために、実際のタブ個数の2倍の値を設定する
         currentSelectIndex = self.yearMonthList.count - 1
-        //print("初期表示時の中央インデックス値:", currentSelectIndex)
-
         // 変数(currentSelectIndex)を基準にして位置情報を更新する
         updateMonthlyTabCollectionViewPosition(withAnimated: false)
         return nil
@@ -49,14 +46,6 @@ class MonthlyTabViewController: UIViewController, Transitioner {
     @IBOutlet private weak var selectedMonthUnderlineWidth: NSLayoutConstraint!
 
     // MARK: - Computed Properties
-
-    // MEMO:
-    // ここでは無限スクロールができるように予め、(実際の個数 × 4)のセルを配置している
-    // またscrollViewDidScroll内の処理で所定の位置で調整をかけるので実際のUICollectionViewCellのインデックス値の範囲は下記のようになる
-    // Ex. タブを6個設定する場合 → 6 ... 19が取り得る範囲となる
-
-    // 表示するカテゴリーの個数を元にしたインデックスの最大値
-    // 例. カテゴリーが6個の場合は5となる
     private var targetContentsMaxIndex: Int {
         yearMonthList.count - 1
     }
@@ -114,7 +103,7 @@ class MonthlyTabViewController: UIViewController, Transitioner {
         monthlyTabCollectionView.dataSource = self
         monthlyTabCollectionView.register(R.nib.monthlyTabCollectionViewCell)
         monthlyTabCollectionView.showsHorizontalScrollIndicator = false
-        
+
         flowLayout.scrollDirection = .horizontal
         let space = monthlyTabCollectionView.bounds.width * 0.5
         flowLayout.minimumLineSpacing = 0
@@ -145,42 +134,15 @@ class MonthlyTabViewController: UIViewController, Transitioner {
         // 下線用のViewに付与したAutoLayoutの幅に関する制約値を更新する
         let targetWidth = MonthlyTabCollectionViewCell.calculateCategoryUnderBarWidthBy(title: yearMonthTitle)
         selectedMonthUnderlineWidth.constant = targetWidth
-        UIView.animate(withDuration: 0.36, animations: {
+        UIView.animate(withDuration: 0.36) {
             self.view.layoutIfNeeded()
-        })
-    }
-    // UIPageViewControllerを動かす方向を受け取ったインデックス値(indexPath.row)と現在のインデックス値(currentSelectIndex)を元に算出する
-    // MEMO: 親(ArticleViewController)のUIPageViewCotrollerの更新はCategoryScrollTabDelegateのメソッドを経由して実行する
-    private func getMonthlyContentsDirection(selectedIndex: Int) -> UIPageViewController.NavigationDirection {
-        // 下記の条件を満たす場合は例外的に進む方向とする
-        // 1. 引数で渡されたインデックス値:
-        //   - selectedIndex が (targetCollectionViewCellMaxIndex - targetContentsMaxIndex) と等しい
-        // 2. 現在のインデックス値:
-        //   - currentSelectIndex が targetCollectionViewCellMaxIndex と等しい
-        if selectedIndex == targetCollectionViewCellMaxIndex - targetContentsMaxIndex && currentSelectIndex == targetCollectionViewCellMaxIndex {
-            return UIPageViewController.NavigationDirection.forward
-        }
-
-        // 下記の条件を満たす場合は例外的に戻す方向とする
-        // 1. 引数で渡されたインデックス値:
-        //   - selectedIndex が (targetCollectionViewCellMinIndex + targetContentsMaxIndex) と等しい
-        // 2. 現在のインデックス値:
-        //   - currentSelectIndex が targetCollectionViewCellMinIndex と等しい
-        if selectedIndex == targetCollectionViewCellMinIndex + targetContentsMaxIndex && currentSelectIndex == targetCollectionViewCellMinIndex {
-            return UIPageViewController.NavigationDirection.reverse
-        }
-
-        // (現在のインデックス値 - 引数で渡されたインデックス値)を元に方向を算出する
-        if currentSelectIndex - selectedIndex > 0 {
-            return UIPageViewController.NavigationDirection.reverse
-        } else {
-            return UIPageViewController.NavigationDirection.forward
         }
     }
+
     private func transformScale(cell: UICollectionViewCell) {
         let cellCenter: CGPoint = monthlyTabCollectionView.convert(cell.center, to: nil)
         let screenCenterX: CGFloat = UIScreen.main.bounds.width / 2
-        let reductionRatio: CGFloat = -0.002//-0.0005
+        let reductionRatio: CGFloat = -0.0025
         let maxScale: CGFloat = 1
         let cellCenterDisX: CGFloat = abs(screenCenterX - cellCenter.x)
         let newScale = reductionRatio * cellCenterDisX + maxScale
@@ -218,46 +180,27 @@ extension MonthlyTabViewController: UICollectionViewDelegateFlowLayout {
 
 extension MonthlyTabViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        // 表示したいセル要素のWidthを計算する
-        // MEMO: 実際の幅の値が欲しいのでUIScrollView内の幅を1/4したものになる
-//        if allTabViewTotalWidth == 0.0 {
-//            allTabViewTotalWidth = floor(scrollView.contentSize.width / 4.0)
-//        }
-//
-//        // スクロールした位置が閾値を超えたら中央に戻す
-//        if (scrollView.contentOffset.x <= allTabViewTotalWidth) || (scrollView.contentOffset.x > allTabViewTotalWidth * 3.0) {
-//            scrollView.contentOffset.x = allTabViewTotalWidth * 2.0
-//        }
         monthlyTabCollectionView.visibleCells.forEach { cell in
             transformScale(cell: cell)
         }
     }
     // 配置したUICollectionViewをスクロールが止まった際に実行される処理
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
-        // スクロールが停止した際に見えているセルのインデックス値を格納して、真ん中にあるものを取得する
-        // 参考: https://stackoverflow.com/questions/18649920/uicollectionview-current-visible-cell-index
-
-//        var visibleIndexPathList: [IndexPath] = []
         var targetIndexPath: IndexPath?
         for cell in monthlyTabCollectionView.visibleCells {
-//            if let visibleIndexPath = monthlyTabCollectionView.indexPath(for: cell) {
-//                visibleIndexPathList.append(visibleIndexPath)
-//                //print("現在画面内に見えているセルのインデックス値:", visibleIndexPath)
-//            }
-            
             let cellCenter: CGFloat = monthlyTabCollectionView.convert(cell.center, to: nil).x
             let screenCenterX: CGFloat = UIScreen.main.bounds.width / 2
-            if screenCenterX-1 < cellCenter && cellCenter < screenCenterX+1 {
+            if screenCenterX - 1 < cellCenter && cellCenter < screenCenterX + 1 {
                 targetIndexPath = monthlyTabCollectionView.indexPath(for: cell)
                 break
             }
         }
-        guard let targetIndexPath = targetIndexPath else { return }
+        guard let targetIndexPath = targetIndexPath else {
+            return
+        }
 
         // ※この部分は厳密には不要ではあるがdelegeteで引き渡す必要があるので設定している
-        let targetDirection = getMonthlyContentsDirection(selectedIndex: targetIndexPath.row)
+        let targetDirection: UIPageViewController.NavigationDirection = currentSelectIndex - targetIndexPath.row > 0 ? .reverse : .forward
 
         // 押下した場所のインデックス値を現在のインデックス値を格納している変数(currentSelectIndex)にセットする
         currentSelectIndex = targetIndexPath.row

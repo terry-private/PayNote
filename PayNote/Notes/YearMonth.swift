@@ -8,36 +8,41 @@
 import Foundation
 
 struct YearMonth: Hashable {
-    let key: Int
-    let year: Int
-    let month: Int
+    // MARK: - Stored Property
+    let value: Int
+
+    // MARK: - Computed Property
+    var year: Int {
+        value / 12// - (value % 12 == 0 ? 1 : 0)
+    }
+    var month: Int {
+        value % 12 + 1
+    }
 
     // MARK: - init
-    init(key: Int) {
-        self.key = key
-        year = key / 12
-        month = key % 12
+    init(value: Int) {
+        self.value = value
     }
     init(year: Int, month: Int) {
-        self.year = year
-        self.month = month
-        key = year * 12 + month
+        value = year * 12 + month - 1
     }
     init(_ date: Date) {
-        year = Calendar.getYear(from: date)
-        month = Calendar.getMonth(from: date)
-        key = year * 12 + month
+        let year = Calendar.getYear(from: date)
+        let month = Calendar.getMonth(from: date)
+        value = year * 12 + month - 1
     }
 }
 
+// MARK: - CustomStringConvertible
 extension YearMonth: CustomStringConvertible {
     var description: String {
         "\(year)年\(month)月"
     }
 }
 
+// MARK: - Comparable
 extension YearMonth: Comparable {
     static func < (lhs: YearMonth, rhs: YearMonth) -> Bool {
-        lhs.key < rhs.key
+        lhs.value < rhs.value
     }
 }
